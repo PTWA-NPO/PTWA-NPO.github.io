@@ -19,7 +19,7 @@ while (i<Object.keys(gameData.gameData).length){
     level.textContent = i;
     document.querySelector('.levelBtn').appendChild(level);
 }
-AddQuestion();
+addQuestion();
 initCalculateCanvas();
 //init the calculate canvas
 const canvas = $('#calculate-section')[0];
@@ -57,7 +57,7 @@ class Game {
         if (this.level===0){
             this.levelBtn.children().eq(this.level).addClass('active');
             this.level = 1;
-            UpdateAnswer(level);
+            updateAnswer(level);
         }
         else {
             this.changeLevel(level);
@@ -132,7 +132,7 @@ class Game {
         this.level = level;
         this.resetGame();
         this.LevelTranslationControl(this.level);
-        UpdateAnswer(this.level);
+        updateAnswer(this.level);
     }
     
     resetGame(){
@@ -192,11 +192,6 @@ class Game {
         // Release the URL object
         URL.revokeObjectURL(url);
     }
-
-    // toggleHint(){
-    //     if (this.gameState !== GAME_ALIVE) return;    
-    //     $('.overlay').toggle();
-    // }
 
     toggleRightAns(){
         $('.RightAnsOverlay').toggle();
@@ -444,7 +439,7 @@ function removeFirework() {
 }
 
 
-function AddQuestion(){
+function addQuestion(){
     const questionkeys = Object.keys(gameData.gameData);
     questionkeys.forEach((key,index)=>{
         const question = gameData.gameData[key].question;
@@ -457,18 +452,12 @@ function AddQuestion(){
     });
 }
 
-function UpdateAnswer(level){
-    //const OptionsNum = Object.keys(gameData.gameData[level].options).length;
-    //const OptionsKeys = Object.keys(gameData.gameData[level].options);
-    const OptionsValues = Object.values(gameData.gameData[level].options);
-    $('.a').text(OptionsValues[0]);
-    $('.b').text(OptionsValues[1]);
-    $('.c').text(OptionsValues[2]);
-    // for(let i=0; i < OptionsNum; i++){
-    //     const className = OptionsKeys[i];
-    //     $(className).empty();
-    //     $(className).text(OptionsValues[i]);
-    // }
+function updateAnswer(level){
+    const optionValues = Object.values(gameData.gameData[level].options);
+    const optionNames = ['a','b','c'];
+    optionNames.forEach((optionName,index) => {
+        $(`.${optionName}`).text(optionValues[index]);
+    });
 }
 
 function initCalculateCanvas(){
