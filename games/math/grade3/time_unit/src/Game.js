@@ -315,20 +315,6 @@ class Game {
 
     }
     setupCanvas(){
-        //設定按鈕控制
-        $('.startWriting').on('click',()=>{
-            isEraserActive = false;
-            $('.showmode').text("正在書寫模式");
-            $('#calculate-section').removeClass('eraser-cursor');
-            $('#calculate-section').addClass('pen-cursor');
-        });
-    
-        $('.startErasing').on('click',()=>{
-            isEraserActive = true;
-            $('.showmode').text("正在擦布模式");
-            $('#calculate-section').removeClass('pen-cursor');
-            $('#calculate-section').addClass('eraser-cursor');
-        });
     
         const canvas = $('#calculate-section')[0];
         const ctx = canvas.getContext('2d');
@@ -346,13 +332,36 @@ class Game {
         let isMouseActive = false;
         let isEraserActive = false;
     
-        $('.BlackColor').on('click',()=>{ctx.strokeStyle = 'black';});
-        $('.BlueColor').on('click',()=>{ctx.strokeStyle = 'blue';});
-        $('.RedColor').on('click',()=>{ctx.strokeStyle = 'red';});
-    
-        $('.clearAll').on('click',()=>{
-            ctx.clearRect(0,0,canvas.width,canvas.height);
+        $('.calculate-canvas').on('click', '.startWriting', () => {
+            isEraserActive = false;
+            $('.showmode').text("正在書寫模式");
+            $('#calculate-section').removeClass('eraser-cursor');
+            $('#calculate-section').addClass('pen-cursor');
         });
+        
+        $('.calculate-canvas').on('click', '.startErasing', () => {
+            isEraserActive = true;
+            $('.showmode').text("正在擦布模式");
+            $('#calculate-section').removeClass('pen-cursor');
+            $('#calculate-section').addClass('eraser-cursor');
+        });
+        
+        $('.calculate-canvas').on('click', '.BlackColor', () => {
+            ctx.strokeStyle = 'black';
+        });
+        
+        $('.calculate-canvas').on('click', '.BlueColor', () => {
+            ctx.strokeStyle = 'blue';
+        });
+        
+        $('.calculate-canvas').on('click', '.RedColor', () => {
+            ctx.strokeStyle = 'red';
+        });
+        
+        $('.calculate-canvas').on('click', '.clearAll', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+        
     
         $(canvas).on(downEvent, function(e){
             isMouseActive = true;
