@@ -25,6 +25,7 @@ initCalculateCanvas();
 const canvas = $('#calculate-section')[0];
 canvas.width = 800;
 canvas.height = 600;
+setupCanvas();
 
 class Game {
     gameRule = $('.gameRule');
@@ -309,87 +310,6 @@ class Game {
         $('.calculate-canvas').append(QuestionElement);
 
     }
-    setupCanvas(){
-    
-        const canvas = $('#calculate-section')[0];
-        const ctx = canvas.getContext('2d');
-        ctx.strokeStyle = 'black';
-    
-        let x1 = 0;
-        let y1 = 0;
-        let x2 = 0;
-        let y2 = 0;
-    
-        const hasTouchEvent = 'ontouchstart' in window ? true : false;
-        const downEvent = hasTouchEvent ? 'ontouchstart' : 'mousedown';
-        const moveEvent = hasTouchEvent ? 'ontouchmove' : 'mousemove';
-        const upEvent = hasTouchEvent ? 'touchend' : 'mouseup';
-        let isMouseActive = false;
-        let isEraserActive = false;
-    
-        $('.calculate-canvas').on('click', '.startWriting', () => {
-            isEraserActive = false;
-            $('.showmode').text("正在書寫模式");
-            $('#calculate-section').removeClass('eraser-cursor');
-            $('#calculate-section').addClass('pen-cursor');
-        });
-        
-        $('.calculate-canvas').on('click', '.startErasing', () => {
-            isEraserActive = true;
-            $('.showmode').text("正在擦布模式");
-            $('#calculate-section').removeClass('pen-cursor');
-            $('#calculate-section').addClass('eraser-cursor');
-        });
-        
-        $('.calculate-canvas').on('click', '.BlackColor', () => {
-            ctx.strokeStyle = 'black';
-        });
-        
-        $('.calculate-canvas').on('click', '.BlueColor', () => {
-            ctx.strokeStyle = 'blue';
-        });
-        
-        $('.calculate-canvas').on('click', '.RedColor', () => {
-            ctx.strokeStyle = 'red';
-        });
-        
-        $('.calculate-canvas').on('click', '.clearAll', () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        });
-        
-    
-        $(canvas).on(downEvent, function(e){
-            isMouseActive = true;
-            x1 = e.offsetX;
-            y1 = e.offsetY+16;
-    
-            ctx.lineWidth = 3;
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-        });
-
-        $(canvas).on(moveEvent, function(e){
-            if(!isMouseActive){
-                return;
-            }
-            x2 = e.offsetX;
-            y2 = e.offsetY+32;
-            if(isEraserActive){
-                ctx.clearRect(x2-10,y2-10,20,20);
-            }else{
-                ctx.beginPath();
-                ctx.moveTo(x1, y1);
-                ctx.lineTo(x2, y2);
-                ctx.stroke();    
-                x1 = x2;
-                y1 = y2;
-            }
-        });
-    
-        canvas.addEventListener(upEvent, function(e){
-            isMouseActive = false;
-        });
-    }
 
     toggleCalculateCanvas(){
         $('.calculate-canvas').toggle();
@@ -487,3 +407,84 @@ function initCalculateCanvas(){
     $('.calculate-canvas').append(FormHintElement);
 }
 
+function setupCanvas(){
+    
+    const canvas = $('#calculate-section')[0];
+    const ctx = canvas.getContext('2d');
+    ctx.strokeStyle = 'black';
+
+    let x1 = 0;
+    let y1 = 0;
+    let x2 = 0;
+    let y2 = 0;
+
+    const hasTouchEvent = 'ontouchstart' in window ? true : false;
+    const downEvent = hasTouchEvent ? 'ontouchstart' : 'mousedown';
+    const moveEvent = hasTouchEvent ? 'ontouchmove' : 'mousemove';
+    const upEvent = hasTouchEvent ? 'touchend' : 'mouseup';
+    let isMouseActive = false;
+    let isEraserActive = false;
+
+    $('.calculate-canvas').on('click', '.startWriting', () => {
+        isEraserActive = false;
+        $('.showmode').text("正在書寫模式");
+        $('#calculate-section').removeClass('eraser-cursor');
+        $('#calculate-section').addClass('pen-cursor');
+    });
+    
+    $('.calculate-canvas').on('click', '.startErasing', () => {
+        isEraserActive = true;
+        $('.showmode').text("正在擦布模式");
+        $('#calculate-section').removeClass('pen-cursor');
+        $('#calculate-section').addClass('eraser-cursor');
+    });
+    
+    $('.calculate-canvas').on('click', '.BlackColor', () => {
+        ctx.strokeStyle = 'black';
+    });
+    
+    $('.calculate-canvas').on('click', '.BlueColor', () => {
+        ctx.strokeStyle = 'blue';
+    });
+    
+    $('.calculate-canvas').on('click', '.RedColor', () => {
+        ctx.strokeStyle = 'red';
+    });
+    
+    $('.calculate-canvas').on('click', '.clearAll', () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+    
+
+    $(canvas).on(downEvent, function(e){
+        isMouseActive = true;
+        x1 = e.offsetX;
+        y1 = e.offsetY+16;
+
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+    });
+
+    $(canvas).on(moveEvent, function(e){
+        if(!isMouseActive){
+            return;
+        }
+        x2 = e.offsetX;
+        y2 = e.offsetY+32;
+        if(isEraserActive){
+            ctx.clearRect(x2-10,y2-10,20,20);
+        }else{
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();    
+            x1 = x2;
+            y1 = y2;
+        }
+    });
+
+    canvas.addEventListener(upEvent, function(e){
+        isMouseActive = false;
+    });
+}
