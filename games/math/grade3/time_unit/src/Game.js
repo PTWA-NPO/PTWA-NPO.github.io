@@ -19,7 +19,6 @@ while (i<Object.keys(gameData.gameData).length){
     level.textContent = i;
     document.querySelector('.levelBtn').appendChild(level);
 }
-AddAnimationGrayRect();
 AddQuestion();
 initCalculateCanvas();
 //init the calculate canvas
@@ -297,22 +296,15 @@ class Game {
     }
 
     LevelTranslationControl(DestinationLevel){
-        const DestinationLevel_X = (DestinationLevel-1) * 800;
-        $('.question-container, .fill_blank_top, .fill_blank_down').each(function () {
+        const DestinationLevel_Y = (DestinationLevel-1) * 720;
+        $('.question-container').each(function () {
             $(this).css({
                 'transition': 'transform 1.5s ease',
-                'transform': 'translateX(' + -DestinationLevel_X + 'px)'
+                'transform': 'translateY(' + -DestinationLevel_Y + 'px)'
             });
         });
     }
-    // createCanvasElement(level){
-    //     $('.calculate-canvas').toggle();
-    //     $('.Calculus-section-question').remove();
-    //     $('#calculate-section').addClass('pen-cursor');
-    //     const QuestionText = gameData.gameData[level].question; 
-    //     const QuestionElement = $('<p>').attr('class','Calculus-section-question').text('題目：' + QuestionText);
-    //     $('.calculate-canvas').append(QuestionElement);
-    // }
+
     showCanvas(level){
         $('.calculate-canvas').toggle();
         $('#calculate-section').addClass('pen-cursor');
@@ -442,37 +434,13 @@ function removeFirework() {
     }
 }
 
-function AddAnimationGrayRect(){
-    const interval = 35;
-    const totalWidth = 4800;
-    const numGrayRects = totalWidth / interval;
-    for(let i = 0; i < numGrayRects; i++){
-        const grayrect = SetGrayRectAttribute(interval);
-        $('.fill_blank_down,.fill_blank_top').append(grayrect);
-    }
-}
-
-function SetGrayRectAttribute(interval){
-    const grayRectWidth = 10;
-    const grayRectHeight = 20;
-    const grayrectElement = $('<div>');
-    grayrectElement.addClass('gray-rect');
-    grayrectElement.css({
-        width: grayRectWidth + 'px',
-        height: grayRectHeight + 'px',
-        backgroundColor: '#808080',
-        marginRight: interval - grayRectWidth + 'px',
-    });
-    return grayrectElement;
-}
 
 function AddQuestion(){
     const questionkeys = Object.keys(gameData.gameData);
     questionkeys.forEach((key,index)=>{
         const question = gameData.gameData[key].question;
         const questionElement = $('<div>',{
-            css: {left: (index * 800 + 400) + 'px',position: 'absolute'},
-            // css:{'transform': 'translateX(' + (index * 800 + 400) + 'px)'},
+            css: {top: (index * 720 + 180) + 'px',position: 'absolute'},
             text:question,
         });
         questionElement.addClass('question');

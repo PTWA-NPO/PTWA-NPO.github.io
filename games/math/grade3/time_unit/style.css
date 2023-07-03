@@ -285,20 +285,12 @@ button {
     height: 100%;
     bottom: 0%;
     left: 0%;
-    /* position: absolute;
-    top: 0;
-    left: 0; */
-    /* border-radius: 10px;
-    border:5px solid #02bbdc; */
     overflow:hidden;
   }
   
   .tool,
-  .fill_blank_top,
   .question-container,
-  .fill_blank_down,
   .options {
-    width:4800px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -309,17 +301,9 @@ button {
     height:60px;
   }
   
-  .fill_blank_top {
-    height:30px;
-  }
-  
   .question-container {
     position: relative;
     height:360px;
-  }
-  
-  .fill_blank_down {
-    height:30px;
   }
   
   .options {
@@ -328,31 +312,12 @@ button {
 
   .question{
     width: 800px;
-    display: inline-block;
+    display: block;
     letter-spacing: 3px;
     font-size: 60px;
-    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
-
-
-/* .game_area .question {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 6;
-    margin: 30px;
-    margin-right: 0;
-    background-color: #b3e6e5;
-    background-color: #d2e2e2;
-    border-radius: 50px;
-    position: relative;
-} */
-
-/* .game_area .question canvas{
-border: 2px solid rgb(141, 175, 185);
-border-radius: 50px;
-} */
 
 /* 計算區canvas */
 .calculate-canvas-btn{
