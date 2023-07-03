@@ -39,6 +39,7 @@ class Game {
         this.gameState = GAME_FILE;
         this.level = 0;
         this.lives = 0;
+        this.liveState = false;
         this.record = {'question': []
                       , 'answer': []
                       , 'result': []
@@ -138,6 +139,7 @@ class Game {
         // this.gameState = GAME_FILE;
         $('#nextBtn').removeClass('jumpBtn');
         this.gameState = GAME_ALIVE;
+        this.liveState = false;
         firework_sound.pause();
         fireworkContainer.css('display', 'none');
         this.winLevelArr.forEach((level)=>{
@@ -208,7 +210,7 @@ class Game {
         const count = lives - $('.lives').children().length;
         if (count === 0 || lives < 0) return;
         if (count < 0) {
-            if(lives===0) this.showExplaination(level);
+            if(lives===0) this.showExplaination(level),this.liveState = true;
             $('.lives > :last-child').remove();
             return
         }
@@ -246,9 +248,7 @@ class Game {
             if(question.includes("秒")){ 
                 //題目格式是x分鐘y秒
                 let minutes = parseInt(question.split("分鐘")[0]);
-                console.log(minutes);
                 let seconds = parseInt(question.split("分鐘")[1].split("秒")[0]);
-                console.log(seconds);
                 $('#conversion-table tr:nth-child(1) td:nth-child(1)').text('60');
                 $('#conversion-table tr:nth-child(2) td:nth-child(2)').text(minutes);
                 $('#conversion-table tr:nth-child(4) td:nth-child(1)').text(minutes * 60);
