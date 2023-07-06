@@ -1,0 +1,137 @@
+.navbar-toggler {
+    z-index:1000;
+    border: 10px;
+    color: blueviolet;
+    background-color: white;
+    margin-top: 10px;
+}
+.navbar-collapse {
+    z-index: 1000;
+}
+
+.nav-link{
+    background-color: #57b9d985;
+    
+}
+
+.navbar-brand {
+   margin-bottom: 8px;
+}
+
+.nav2 {
+    display: none;
+}
+
+.nav-link:hover .nav1{
+    display: none;
+    transition-delay: 5s;
+}
+
+.nav-link:hover .nav2{
+    display: block;
+    transition-delay: 5s;
+}
+
+.sidebar {
+    float: left;
+    /*text-align: left; */
+
+    padding-top: 90px;
+}
+
+.nav-item2{
+    padding-top: 20px;
+}
+/* Unit */
+.mathUnit {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    font-size: 30px;
+    color: #eee;
+
+}
+.mathUnit button{
+    font-size: 30px;
+    width: 50px;
+    border-radius: 50%;
+    border: solid 2px #7b8e5d;
+    background-color:#ADC090;
+}
+.mathUnit button:hover{
+    color: aliceblue;
+    background-color:#7b8e5d;
+}
+.content * {
+    /* border: solid 2px black; */
+}
+.content {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+/* previousPage Btn */
+.previousPage {
+    position: absolute;
+    left: 50px;
+    display: none;
+    background-color: #eee;
+    color: #8e8e9c;
+    border-radius: 30px;
+    height: 50px;
+    width: 200px;
+    border:3px solid #02bbdc;
+    font-size: 30px;
+}
+
+.previousPage:hover {
+    background-color: #02bbdc;
+    color: #fff;
+    transition: 0.5s;
+}
+/* gameBlock */
+.gameBlock {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap
+}
+.gameBlock > *{
+    cursor: pointer;
+    flex-shrink: 0;
+}
+/* game block */
+.gameBlock .game {
+    display: flex;
+    flex-direction: column;
+}
+.gameBlock button{
+    appearance: none;
+}
+
+/* game */
+
+.game .img {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    border: solid 3px #7b8e5d;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.game .img img {
+    width: 100%;
+    height: 100%;
+}
+.game h3 {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* iframe */
+iframe {
+    display: none;
+    width: 800px;
+    height: 710px;
+}

@@ -1,0 +1,124 @@
+@import url(../../game_view/css/connection_game.css);
+
+* {
+    /* border: solid 2px black; */
+    /* position: relative; */
+}
+
+/* hint */
+.overlay{
+    /* display: block; */
+}
+
+.hintContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.hintContainer .leftArea, .hintContainer .centerArea, .hintContainer .rightArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+.hintContainer .leftArea .contentArea {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    width: 200px;
+    flex-wrap: wrap;
+}
+/* Game Area */
+.gameArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Question Area */
+.gameArea .leftArea, .gameArea .centerArea, .gameArea .rightArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+.gameArea .leftArea {
+    margin-left: 1em;
+    max-width: 240px;
+}
+.rightArea {
+    margin-right: 1em;
+}
+
+/* Ever Question Area*/
+.questionArea, .answerArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Content Area */
+.contentArea {
+    display: flex;
+    position: relative;
+}
+
+.contentArea img {
+    display: inline-block;
+}
+
+.contentArea h2{
+    margin: 0;
+}
+/* Left Area */
+.gameArea .leftArea .contentArea {
+    flex: 3;
+    display: inline-block;
+}
+/* Center Area */
+/* units */
+.centerArea .contentArea h2 {
+    text-align: center;
+    display: flex;
+    writing-mode: horizontal-tb;
+}
+.centerArea .contentArea .thousand::after {
+    content: "千";
+}
+/* Right Area */
+/* units */
+.rightArea .contentArea {
+    border: 2px solid black;
+}
+.rightArea .contentArea > * {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    border-right: 2px solid black;
+    min-width: 30px;
+}
+.rightArea .contentArea :last-child {
+    border: none;
+}
+/* Chinese and Number */
+.rightArea .contentArea > * > *{
+    text-align: center;
+}
+.rightArea .contentArea > * > .chinese{
+    display: flex;
+    flex-direction: column;
+    flex: 6;
+    border-bottom: 2px solid black;
+}
+.rightArea .contentArea > * > .chinese::after{
+    content: "位";
+}
+
+/* Dot */
+.leftArea .dot {
+    margin-left: 0.1em;
+}.centerArea .dot {
+    margin: 0.1em;
+}
+.rightArea .dot {
+    margin-right: 0.1em;
+}

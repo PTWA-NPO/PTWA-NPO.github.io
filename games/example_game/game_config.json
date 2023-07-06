@@ -1,0 +1,21 @@
+[
+    {
+        "question": "1+1="
+        , "answer": "2"
+        , "lives": "3"
+    }
+    , {
+        "question": "1-1="
+        , "answer": "0"
+        , "lives": "2"
+    }
+    , {
+        "question": "1*1="
+        , "answer": "1"
+        , "lives": "1"
+    }
+    , {
+        "question": "1/1="
+        , "answer": "1"
+    }
+]

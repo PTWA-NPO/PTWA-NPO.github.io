@@ -1,0 +1,343 @@
+* {
+    /* border: solid 2px black; */
+}
+
+body {
+    right: 0;
+    font-family: '微軟正黑體';
+    margin: 0;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameWindow {
+    width: 800px;
+}
+
+/* game view */
+.canvas {
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 600px;
+}
+
+.canvas .topic {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.canvas .topic::before {
+    content: "題目為：";
+}
+
+.canvas .topic::after {
+    content: " 毫升";
+}
+
+.lives{
+    position: absolute;
+    top: 2%;
+    width: 100px;
+    right: 10%;
+}
+.canvas .canvas1 {
+    width: 100%;
+    height: 100%;
+    border:5px solid #02bbdc;
+    background-color: #eee;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* game rule */
+.canvas .gameRule {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border:5px solid #02bbdc;
+    background-color: #eee;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.canvas .gameRule *{
+    font-size: 40px;
+}
+
+.canvas .gameRule #start #version {
+    position: absolute;
+    font-size: 20px; 
+    top: 0%;
+    right: 10%;
+    color: #bbb;
+}
+
+.canvas .gameRule .context{
+    position: relative;
+    transform: translateX(15%);
+}
+
+.canvas .gameRule #start{
+    transform: translateX(5%);
+}
+
+.canvas .gameRule #end{
+    transform: translateX(30%);
+}
+
+/* level */
+.gameBtn {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gameBtn * {
+    border:2px solid #02bbdc;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameBtn *:hover {
+    transform: translate(0px, -5px);
+    transition: 0.5s;
+}
+
+.levelBtn {
+    height: 60;
+    padding-top: 10px;
+    margin: 0;
+}
+.levelBtn * {
+    background-color: #eee;
+    color: #8e8e9c;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.levelBtn *:hover,.levelBtn *.active {
+    background-color: #02bbdc;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.bingo {
+    border:2px solid green;
+    background-color: green;
+    color: #fff;
+}
+
+/* options */
+.optionsBtn * {
+    background-color: #02bbdc;
+    color: #fff;
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    box-sizing: border-box;
+}
+
+.optionsBtn *:hover {
+    background-color: #eee;
+    color: #8e8e9c;
+    transition: 0.5s;
+}
+
+.optionsBtn {
+    position: absolute;
+    z-index: 9999;
+}
+
+.optionsBtn #lastBtn {
+    flex: 2;
+}
+.optionsBtn #startBtn {
+    flex: 3;
+}
+.optionsBtn #nextBtn {
+    flex: 2;
+}
+.optionsBtn #submitBtn {
+    flex: 3;
+    background-color: #02dc31;
+    border-color: #02dc31;
+  }
+  
+.jumpBtn {
+    animation: jump 1s ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes jump {
+0%, 100%{
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-5px);
+}
+}
+   
+  
+.shadow {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+}
+
+/* container */
+
+.game_area {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 0%;
+    left: 0%;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.game_area .water_container {
+    position: relative;
+    height: 100%;
+    bottom: 0%;
+    border: solid 2px black;
+    border-top: none;
+    flex: 5;
+}
+
+.game_area .water_scale {
+    font-size: 30px;
+    font-weight: bold;
+    transform: translate(5%, -9%);
+    flex: 3;
+    color: red;
+}
+
+.game_area .water_control {
+    position: relative;
+    flex: 2;
+}
+
+.game_area .water_control .updown {
+    position: absolute;
+    font-size: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.water_container .water {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0%;
+    left: 50%;
+    background-color: #02bbdc;
+    transform: translate(-50%, 0%);
+}
+
+.water_container .line{
+    position: absolute;
+    width: 30px;
+    border: solid 2px black;
+    top: 50%
+}
+
+.scales {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    top: 0%;
+}
+.scales *{
+    height: 0;
+    width: 15px;
+    border: solid 1px black;
+}
+.scales :first-child {
+    border: none;
+}
+.scales :nth-child(5n+1) {
+    width: 20px
+}
+.scales :last-child {
+    width: 25px;
+}
+.milliliterContainer {
+    display: flex;
+    position: relative;
+    height: 110%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    top: -5%;
+    left: 10%;
+    list-style: none;
+}
+
+.milliliterContainer *{
+    position: absoulte;
+    z-index: 999;
+    font-size: 30px;
+}
+
+.milliliterContainer *::after{
+    content: "ml";
+    font-size: 30px;
+    padding: 5px;
+}
+.milliliterContainer .bottom{
+    transform: translateY(-50%);
+}
+/* fireworks */
+
+#firework-container {
+    position: absolute;
+    display: none;
+    z-index: 99;
+    top: 15%;
+    left: 5%;
+    width : 90%;
+    height: 85%;
+}
+
+/* result */
+
+.result #bingo,#dada {
+    position:absolute;
+    margin: 0;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 99;
+    display: none;
+    font-size: 500px;
+}
+
+
+.result #bingo {
+    color: green;
+}
+.result #dada {
+    color: red;
+}

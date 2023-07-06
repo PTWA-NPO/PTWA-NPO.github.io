@@ -1,0 +1,65 @@
+@import url(../../game_view/css/game_style.css);
+
+.countDown::before {
+    content: "剩餘時間：";
+}
+.score::before {
+    content: "分數：";
+}
+.gameInfo {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+.gameInfo * {
+    margin: 0;
+}
+.level {
+    display: none;
+    position: absolute;
+    width: calc(100% - 2 * 30px);
+    height: calc(100% - 2 * 80px);
+    margin: 80px 30px;
+    box-sizing: border-box;
+}
+.randomImgae img {
+    display: none;
+    position: absolute;
+}
+
+#level-1 {
+    cursor: crosshair;
+}
+#level-2 {
+    cursor: grab;
+    width: calc(100% - 300px);
+    height: calc(100% - 450px);
+    margin: 300px 180px 150px 120px;
+}
+#level-2::before {
+    content: "";
+    position: absolute;
+    top: -300px;
+    left: -120px;
+    right: -180px;
+    bottom: -150px;
+    background-image: url("./assets/house.png");
+    background-size: cover;
+    z-index: -1;
+}
+#level-3 {
+    display: none;
+}
+
+.cursor {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: none; /* 确保光标元素不会影响用户交互 */
+    z-index: 9999;
+}
+
+.cursor img {
+    width: 100%;
+    height: 100%;
+}

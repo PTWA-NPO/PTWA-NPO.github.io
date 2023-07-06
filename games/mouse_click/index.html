@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Use jQuery -->
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <!-- Import game sytle -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- 
+        Image Sours
+        target: https://opengameart.org/content/aim
+        balloon: https://linevoom.line.me/user/_dV001P0rSN_bh8zGE0q4jmdr4Fn5d-j73cLrjTc?utm_medium=windows&utm_source=desktop&utm_campaign=Profile
+        farmer: https://opengameart.org/content/farmer
+        chick: https://www.aigei.com/item/mao_xian_dao_xi_1259.html
+        house: https://www.aigei.com/item/chick_house_bas_2.html
+        carrot: https://opengameart.org/content/8-bit-pixelart-carrot
+        potato: https://opengameart.org/content/potato-big
+        explosion: Art from Kenney.n1
+        Sound Sours
+        balloon: https://opengameart.org/content/balloon-sounds
+        chick: https://opengameart.org/content/chicken-sound-effect
+     -->
+</head>
+<body>
+    <audio id="balloonPop" src="assets/sounds/balloon_pop.ogg"></audio>
+    <audio id="balloonApper" src="assets/sounds/balloon_inflate.mp3"></audio>
+    <audio id="chickApper" src="assets/sounds/chickApper.mp3"></audio>
+    <audio id="chickCatch" src="assets/sounds/chickCatch.mp3"></audio>
+    <!-- If your game have hint -->
+    <div class="overlay">
+        <div class="hintContainer">
+            <h1 >提示：</h1>
+            <!-- Define hint content -->
+        </div>
+    </div>
+    <div class="gameArea">
+        <!-- Define Game content -->
+        <div class="gameInfo">
+            <h1 class="countDown"></h1>
+            <h1 class="score">0</h1>
+        </div>
+        <div class="cursor">
+            <img src="./assets/target.png" alt="cursor">
+        </div>
+        <div class="level randomImgae" id="level-1">
+            <img src="./assets/balloon.png" alt="balloon">
+            <img src="./assets/balloon.png" alt="balloon">
+            <img src="./assets/balloon.png" alt="balloon">
+            <img src="./assets/balloon.png" alt="balloon">
+            <img src="./assets/balloon.png" alt="balloon">
+        </div>
+        <div class="level randomImgae" id="level-2">
+            <img src="./assets/chick.gif" alt="balloon">
+            <img src="./assets/chick.gif" alt="balloon">
+            <img src="./assets/chick.gif" alt="balloon">
+            <img src="./assets/chick.gif" alt="balloon">
+            <img src="./assets/chick.gif" alt="balloon">
+        </div>
+        <div class="level" id="level-3">
+            <img src="./assets/potato.png" alt="potato">
+            <img src="./assets/potato.png" alt="potato">
+            <img src="./assets/potato.png" alt="potato">
+            <img src="./assets/potato.png" alt="potato">
+            <img src="./assets/potato.png" alt="potato">
+        </div>
+        <div class="level" id="level-4">
+            <img src="./assets/parrot1.png" alt="parrot1">
+            <img src="./assets/parrot1.png" alt="parrot1">
+            <img src="./assets/parrot1.png" alt="parrot1">
+            <img src="./assets/parrot1.png" alt="parrot1">
+            <img src="./assets/parrot1.png" alt="parrot1">
+        </div>
+    </div>
+    <!-- Import your game -->
+    <script src="./src/Game.js" type="module"></script>
+</body>
+</html>

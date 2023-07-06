@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>時間單位換算</title>
+    <script src="../../../../jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="audio">
+        <audio id="correct" src="assets/sounds/correct_sound_effect.mp3"></audio>
+        <audio id="wrong" src="assets/sounds/wrong_sound_effect.mp3"></audio>
+        <audio id="win" src="assets/sounds/applause_fireworks.mp3" duration="3"></audio>
+    </div>
+    <div class="gameWindow">
+        <div class="gameBtn levelBtn">            
+            <button class="level">1</button>
+        </div>
+        <div class="myCanvas">
+            <div class="gameRule">
+                <h1 id="start">遊戲玩法：
+                    <span id="version">V0.1.2</span>
+                </h1>
+                <div class="context">
+                    <h1>根據題目選擇對應的答案</h1>
+                    <h1>可使用右上角的計算紙來計算</h1>
+                    <h1>正確即可過關</h1>
+                    <h1>點擊💾可下載遊戲紀錄</h1>
+                </div>
+                <h1 id="end">準備好了嗎？點擊遊戲開始！</h1>
+            </div>
+                <div class="topic">
+            </div>
+            <div class="lives"></div> 
+            <btn class="calculate-canvas-btn"><img src="assets/images/notebook.png" alt="計算紙">計算紙</btn>
+            <div class="calculate-canvas">
+                <canvas id="calculate-section"></canvas>
+                <span class="closeCalculateCanvasBtn">Ｘ</span>
+            </div>
+            <div class="overlay">
+                <div class="hintContainer">
+                    <h1 >提示：</h1>
+                    <p>1小時=60分鐘</p>
+                    <p>1分鐘=60秒</p>
+                    <img src="assets/images/Hint.png" alt="GoGoGo!!!">
+                    <span class="closeHintBtn">Ｘ</span>
+                </div>
+            </div>
+            <div class="RightAnsOverlay">
+                <div class="RightAnsSection">
+                    <h1 class="RightAns-Explaination">正確換算過程:</h1>
+                    <p class="horizontal-form"></p>
+                    <div class="vertical-form">
+                        <table id="conversion-table">
+                            <tr>
+                                <td colspan="2"></td><td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td>x</td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">————————</td><td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td><td colspan="2"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <span class="closeRightAnsBtn">Ｘ</span>
+                </div>
+            </div>
+            <div class="game_area">
+                <div class="tool"></div>
+                <div class="fill_blank_top"></div>
+                <div class="question-container"></div>
+                <div class="fill_blank_down"></div>
+                <div class="answer">
+                    <div class="a"></div>
+                    <div class="b"></div>
+                    <div class="c"></div>
+                </div>
+            </div>
+            <!-- <div class="game_area">
+                <div class="question"></div>
+                <div class="answer"></div>
+            </div> -->
+            <div class="result">
+                <h1 id="bingo">Ｏ</h1>
+                <h1 id="dada">Ｘ</h1>
+            </div>
+            <div id="firework-container"></div>
+        </div>
+        <div class="gameBtn optionsBtn">
+            <button id="lastBtn">上一關</button>
+            <button id="startBtn">遊戲開始</button>
+            <button id="nextBtn">下一關</button>
+            <button id="recordBtn">💾</button>
+            <!-- <button id="hintBtn">提示</button> -->
+            <!-- <button class="jumpBtn" id="submitBtn">送出答案</button> -->
+        </div>
+    </div>
+    <div class="script">
+        <script src="src/script.js" type="module"></script>
+    </div>
+</body>
+</html>

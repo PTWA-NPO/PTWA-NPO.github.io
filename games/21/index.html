@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import game sytle -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Use jQuery -->
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- If your game have hint -->
+    <div class="overlay">
+        <div class="hintContainer">
+            <h1>提示：</h1>
+            <!-- Define hint content -->
+        </div>
+    </div>
+    <div class="gameArea">
+        <!-- Define Game content -->
+        <div class="topArea">
+            <div class="donut">
+                <div>
+                    <h1>一盒甜甜圈 12 個。</h1>
+                    <h1>有 3 種口味：</h1>
+                    <h1>　　4 個藍莓口味</h1>
+                    <h1>　　5 個草莓口味</h1>
+                    <h1>　　3 個抹茶口味</h1>            
+                </div>
+                <div class="donuts-img">
+                    <div class="blueberry">
+                        <img src="assets/images/blueberry.png" alt="blueberry">
+                        <img src="assets/images/blueberry.png" alt="blueberry">
+                        <img src="assets/images/blueberry.png" alt="blueberry">
+                        <img src="assets/images/blueberry.png" alt="blueberry">
+                    </div>
+                    <div class="straberry">
+                        <img src="assets/images/straberry.png" alt="straberry">
+                        <img src="assets/images/straberry.png" alt="straberry">
+                        <img src="assets/images/straberry.png" alt="straberry">
+                        <img src="assets/images/straberry.png" alt="straberry">
+                        <img src="assets/images/straberry.png" alt="straberry">
+                    </div>
+                    <div class="moja">
+                        <img src="assets/images/moja.png" alt="moja">
+                        <img src="assets/images/moja.png" alt="moja">
+                        <img src="assets/images/moja.png" alt="moja">
+                    </div>
+                </div>
+            </div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <!-- Import your game -->
+    <script src="./src/Game.js" type="module"></script>
+</body>
+
+</html>

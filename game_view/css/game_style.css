@@ -1,0 +1,103 @@
+body {
+    position: relative;
+    right: 0;
+    font-family: '微軟正黑體';
+    margin: 0;
+}
+
+/* hint */
+.overlay{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.hintContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 1);
+    border: 5px solid #b3e6e5;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.hintContainer > h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1% 0 0 1%;
+    color: #000;
+}
+.closeHintBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+}
+
+.closeHintBtn:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+/* Explain */
+.explain {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+/* Lives */
+.lives{
+    position: absolute;
+    top: 2%;
+    width: 100px;
+    transform: translateX(-25%);
+    right: 0;
+}
+/* Game Area */
+.gameArea {
+    position: relative;
+    width: 100%;
+    height: 650px;
+}
+
+/* result */
+.result > * {
+    position:absolute;
+    margin: 0;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 99;
+    display: none;
+    font-size: 500px;
+}
+
+#bingo {
+    color: green;
+}
+#dada {
+    color: red;
+}
+
+.greenWord {
+    color: green;
+}
+.redWord {
+    color: red;
+}
+

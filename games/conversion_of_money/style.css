@@ -1,0 +1,22 @@
+@import url(../../game_view/css/combination_lock.css);
+
+/* For Develop */
+* {
+    /* border: solid 2px black; */
+}
+
+.topArea {
+    flex-direction: column;
+}
+
+.banknote, .coin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.banknote img, .coin img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 10px;
+}

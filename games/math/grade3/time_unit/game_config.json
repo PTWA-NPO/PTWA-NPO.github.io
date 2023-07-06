@@ -1,0 +1,64 @@
+{"gameData": 
+    {
+        "1": {
+            "question": "9分鐘",
+            "options": {
+                "a": "540秒",
+                "b": "450秒",
+                "c": "54秒"
+            },
+            "answer": "a",
+            "explaination_horizontal": "9(分鐘) = 9 x 60(秒鐘) = 540(秒鐘)"
+        },
+        "2": {
+            "question": "12分鐘",
+            "options": {
+                "a": "780秒",
+                "b": "720秒",
+                "c": "660秒"
+            },
+            "answer": "b",
+            "explaination_horizontal": "12(分鐘) = 12 x 60(秒鐘) = 720(秒鐘)"
+        },
+        "3": {
+            "question": "6分鐘10秒",
+            "options": {
+                "a": "370秒",
+                "b": "310秒",
+                "c": "610秒"
+            },
+            "answer": "a",
+            "explaination_horizontal": "6(分鐘) 10(秒) = 6 x 60(秒鐘) + 10(秒鐘)= 370(秒鐘)"
+        },
+        "4": {
+            "question": "1小時",
+            "options": {
+                "a": "36分鐘",
+                "b": "66分鐘",
+                "c": "60分鐘"
+            },
+            "answer": "c",
+            "explaination_horizontal": "1(小時) = 1 x 60(分鐘) = 60(分鐘)"
+        },
+        "5": {
+            "question": "11小時",
+            "options": {
+                "a": "660分鐘",
+                "b": "630分鐘",
+                "c": "600分鐘"
+            },
+            "answer": "a",
+            "explaination_horizontal": "11(小時) = 11 x 60(分鐘) = 660(分鐘)"
+        },
+        "6": {
+            "question": "3小時5分鐘",
+            "options": {
+                "a": "305分鐘",
+                "b": "185分鐘",
+                "c": "165分鐘"
+            },
+            "answer": "b",
+            "explaination_horizontal": "3(小時) 5(分鐘) = 3 x 60(分鐘) + 5(分鐘)= 185(分鐘)"
+        }
+    }
+}

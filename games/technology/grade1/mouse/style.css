@@ -1,0 +1,80 @@
+body {
+  width: 550px;
+  height: 800px;
+  display: flex;
+  font-family: 'Arial';
+}
+
+#canvas1{
+    border: 5px solid black;
+    width: 800px;
+    height: 500px;
+    cursor: none;
+    border-radius: 6px;
+    border-color: #003D79;
+}
+.cursor{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 350;
+  right: auto;  
+}    
+.levelBtn{
+  background-color: 	#003D79;
+  color: 		#BEBEBE;
+  width: 200px;
+  height: 55px;
+  font-size: 20px;
+  font-weight:bolder;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 50px;
+  transition: transform .2s;
+  transition: all .3s linear;
+}
+#startBtn{
+  background-color: #003D79;
+  color: 		#BEBEBE;
+  width: 450px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  border: none;
+  border-radius: 20px;
+  margin-left: 50px;
+  transition: transform .2s;
+  transition: all .3s linear;
+}
+#resultBtn {
+  background-color: #003D79;
+  color: 	#BEBEBE;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+  border: none;
+  border-radius: 20px;
+  margin-left: 53px;
+  transition: all .3s linear;
+}
+
+.levelBtn:hover {
+  color: #003D79;
+  background-color: #BEBEBE;
+}
+
+#startBtn:hover {
+  color: #003D79;
+  background-color: #BEBEBE;
+}
+
+#resultBtn:hover{
+  color: #003D79;
+  background-color: #BEBEBE;
+}
+
+

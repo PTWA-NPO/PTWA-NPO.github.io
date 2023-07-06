@@ -1,0 +1,32 @@
+[
+    {
+        "lives": 2
+        , "hour": "%3 !=== 0"
+        , "minute": 15
+    }
+    , {
+        "lives": 2
+        , "hour": "< 12"
+        , "minute": 10
+    }
+    , {
+        "lives": 2
+        , "hour": "< 12"
+        , "minute": "10+5"
+    }
+    , {
+        "lives": 2
+        , "hour": "< 12"
+        , "minute": 5
+    }
+    , {
+        "lives": 2
+        , "hour": "> 12"
+        , "minute": 1
+    }
+    , {
+        "lives": 2
+        , "hour": "< 24"
+        , "minute": 1
+    }
+]

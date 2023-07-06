@@ -1,0 +1,42 @@
+{
+    "gameName": "My Game"
+    , "description": [""]
+    , "imageSource": ""
+    , "initialize": {
+        "width": 800
+        , "height": 600
+        , "backgroundColor": "#333"
+        , "options": {
+            "start": "startButton"
+            , "next": "nextButton"
+            , "prev": "prevButton"
+            , "hint": "hintButton"
+            , "submit": "submitButton"
+            , "donload": "donloadButton"
+        }
+    }
+    , "level": [
+        {
+            "bg": "level_1.png"
+            , "topic": [1, 10, 1]
+        }
+        , {
+            "bg": "level_2.png"
+            , "topic": [1, 50, 1]
+        }
+        , {
+            "bg": "level_3.png"
+            , "topic": [10, 250, 10]
+        }
+        , {
+            "bg": "level_4.png"
+            , "topic": [100, 1000, 10]
+        }
+        , {
+            "bg": "level_5.png"
+            , "topic": [100, 2000, 100]
+        }
+    ]
+
+}
+  

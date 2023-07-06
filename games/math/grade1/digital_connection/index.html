@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digital Connection Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div>
+        <div>
+            <canvas id="canvas1"></canvas>
+            <canvas id="canvas2"></canvas>
+            <canvas id="canvas3"></canvas>
+        </div>
+        <div>            
+            <button class="chooseBtn">1</button>
+            <button class="chooseBtn">2</button>
+            <button class="chooseBtn">3</button>
+            <button class="chooseBtn">4</button>
+            <button class="chooseBtn">5</button>
+            <button class="chooseBtn">6</button>
+        </div>
+        <div>
+            <button id="startBtn" class="stateBtn">遊戲開始</button>
+            <button id="nextLevel" class="stateBtn">下一關</button>
+            <button id="restart" class="stateBtn">重新開始</button>
+            <button id="hint" class="stateBtn">提示</button>
+            <div id="overlay" style="display:none;">
+                <div id="image-container">
+                    <img id="image" src="asset/image/hint_1.png" alt="提示圖片" />
+                    <span id="close-image-btn">Ｘ</span>
+                </div>
+            </div>
+            <button id="downloadBtn" class="stateBtn">遊戲紀錄</button>
+        </div>
+        <div class="hint"></div>
+        <div id="firework-container"></div>
+        <script src="env.js" type="text/JavaScript"></script>
+        <script src="Npc.js" type="text/JavaScript"></script>
+        <script src="Gesture.js" type="text/JavaScript"></script>
+        <script src="Number.js" type="text/JavaScript"></script>
+        <script src="Point.js" type="text/JavaScript"></script>
+        <script src="Game.js" type="text/JavaScript"></script>
+        <script src="main.js" type="text/JavaScript"></script>
+        <!-- <script src="test.js" type="text/JavaScript"></script> -->
+        <!-- <script src="test2.js" type="text/JavaScript"></script> -->
+    </div>
+    <!--- Sound src-->
+    <audio id="correct" src="../../../../assets/sounds/game_sounds/correct_sound_effect.mp3"></audio>
+    <audio id="wrong" src="../../../../assets/sounds/game_sounds/wrong_sound_effect.mp3"></audio>
+    <audio id="firework" src="../../../../assets/sounds/game_sounds/applause_fireworks.mp3" duration="3"></audio>
+</body>
+</html>

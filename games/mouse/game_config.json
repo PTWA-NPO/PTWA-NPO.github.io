@@ -1,0 +1,11 @@
+[
+    {"q": "eat", "speed": 1, "countDown": 30, "fish": 5, "explain": "吃藍魚獲得分數！（x1）"}
+    , {"q": "eat", "speed": 1.5, "countDown": 30, "fish": 5, "explain": "吃藍魚獲得分數！（x1.5）"}
+    , {"q": "eat", "speed": 2, "countDown": 30, "fish": 5, "explain": "吃藍魚獲得分數！（x2）"}
+    , {"q": "dodge", "speed": 1, "countDown": 30, "fish": 5, "explain": "小心不要被紅魚吃掉！（x1）"}
+    , {"q": "dodge", "speed": 1.5, "countDown": 30, "fish": 5, "explain": "小心不要被紅魚吃掉！（x1.5）"}
+    , {"q": "dodge", "speed": 2, "countDown": 30, "fish": 5, "explain": "小心不要被紅魚吃掉！（x2）"}
+    , {"q": "mix", "speed": 1, "countDown": 30, "fish": 3, "explain": "吃掉藍魚，並小心躲避紅魚！（x1）"}
+    , {"q": "mix", "speed": 1.5, "countDown": 30, "fish": 5, "explain": "吃掉藍魚，並小心躲避紅魚！（x1.5）"}
+    , {"q": "mix", "speed": 2, "countDown": 30, "fish": 5, "explain": "吃掉藍魚，並小心躲避紅魚！（x2）"}
+]
