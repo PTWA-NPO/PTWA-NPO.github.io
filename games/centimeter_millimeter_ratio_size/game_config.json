@@ -1,0 +1,107 @@
+[
+    {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "4公分(cm)"
+            , "questionRight": "42毫米(mm)"
+            , "answer": "<"},
+            {"questionLeft": "6公分(cm)"
+            , "questionRight": "60毫米(mm)"
+            , "answer": "="},
+            {"questionLeft": "3公分(cm)"
+            , "questionRight": "22毫米(mm)"
+            , "answer": ">"},
+            {"questionLeft": "7公分(cm)"
+            , "questionRight": "79毫米(mm)"
+            , "answer": "<"},
+            {"questionLeft": "9公分(cm)"
+            , "questionRight": "80毫米(mm)"
+            , "answer": ">"}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "9公分(cm)\n4毫米(mm)"
+            , "questionRight": "94毫米(mm)"
+            , "answer": "="},
+            {"questionLeft": "5公分(cm)\n7毫米(mm)"
+            , "questionRight": "67毫米(mm)"
+            , "answer": "<"},
+            {"questionLeft": "6公分(cm)\n2毫米(mm)"
+            , "questionRight": "59毫米(mm)"
+            , "answer": ">"},
+            {"questionLeft": "4公分(cm)\n4毫米(mm)"
+            , "questionRight": "48毫米(mm)"
+            , "answer": "<"},
+            {"questionLeft": "5公分(cm)\n6毫米(mm)"
+            , "questionRight": "55毫米(mm)"
+            , "answer": ">"}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "14毫米(mm)"
+            , "questionRight": "10公分(cm)"
+            , "answer": "<"},
+            {"questionLeft": "120毫米(mm)"
+            , "questionRight": "12公分(cm)"
+            , "answer": "="},
+            {"questionLeft": "110毫米(mm)"
+            , "questionRight": "15公分(cm)"
+            , "answer": "<"},
+            {"questionLeft": "140毫米(mm)"
+            , "questionRight": "10公分(cm)"
+            , "answer": ">"},
+            {"questionLeft": "13毫米(mm)"
+            , "questionRight": "13公分(cm)"
+            , "answer": "<"}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "127毫米(mm)"
+            , "questionRight": "12公分(cm)\n1毫米(mm)"
+            , "answer": ">"},
+            {"questionLeft": "137毫米(mm)"
+            , "questionRight": "13公分(cm)\n7毫米(mm)"
+            , "answer": "="},
+            {"questionLeft": "121毫米(mm)"
+            , "questionRight": "11公分(cm)\n9毫米(mm)"
+            , "answer": ">"},
+            {"questionLeft": "123毫米(mm)"
+            , "questionRight": "10公分(cm)\n3毫米(mm)"
+            , "answer": ">"},
+            {"questionLeft": "134毫米(mm)"
+            , "questionRight": "14公分(cm)\n1毫米(mm)"
+            , "answer": "<"}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "11公分(cm)\n2毫米(mm)"
+            , "questionRight": "12公分(cm)"
+            , "answer": "<"},
+            {"questionLeft": "10公分(cm)\n2毫米(mm)"
+            , "questionRight": "11公分(cm)"
+            , "answer": "<"},
+            {"questionLeft": "11公分(cm)\n6毫米(mm)"
+            , "questionRight": "11公分(cm)"
+            , "answer": ">"},
+            {"questionLeft": "19公分(cm)\n2毫米(mm)"
+            , "questionRight": "19公分(cm)"
+            , "answer": ">"},
+            {"questionLeft": "12公分(cm)\n9毫米(mm)"
+            , "questionRight": "13公分(cm)"
+            , "answer": "<"}
+        ]
+        , "lives": "1"
+    }
+]

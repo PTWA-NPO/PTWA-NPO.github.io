@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import game sytle -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Use jQuery -->
+    <script src="../../libs/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <!-- If your game have hint -->
+    <div class="overlay">
+        <div class="hintContainer">
+            <h1 >
+                提示：<br>
+                公分 = cm / 毫米 = mm<br>
+                1公分(cm) = 10毫米(cm)，<br>
+                記得要先變成相同的單位，<br>
+                然後再從最高位開始比大小。
+            </h1>
+        </div>
+    </div>
+    <div class="gameArea">
+        <!-- Define Game content -->
+            <div class="moreThan DraggingItem">
+                >
+            </div>
+
+            <div class="lessThan DraggingItem">
+                <
+            </div>
+
+            <div class="equal DraggingItem">
+                =
+            </div>
+        </div>
+    </div>
+    <!-- Import your game -->
+    <script src="./src/Game.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>認識毫公升</title>
+    <script src="../../../../libs/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="audio">
+        <audio id="correct" src="../../../../assets/sounds/game_sounds/correct_sound_effect.mp3"></audio>
+        <audio id="wrong" src="../../../../assets/sounds/game_sounds/wrong_sound_effect.mp3"></audio>
+        <audio id="win" src="../../../../assets/sounds/game_sounds/applause_fireworks.mp3" duration="3"></audio>
+    </div>
+    <div class="gameWidonw">
+        <div class="gameBtn levelBtn">            
+            <button class="level1">1</button>
+            <button class="level2">2</button>
+            <button class="level3">3</button>
+            <button class="level4">4</button>
+            <button class="level5">5</button>
+        </div>
+        <div class="canvas">
+            <canvas class="canvas1"></canvas>
+            <div class="gameRule">
+                <h1 id="start">遊戲玩法：
+                    <span id="version">V0.1.7</span>
+                </h1>
+                <h1 class="context">電腦使用滑鼠滾輪上下調整刻度</h1>
+                <h1 class="context">平板使用觸控上下滑動調整刻度</h1>
+                <h1 class="context">填入相對的容量後，送出答案</h1>
+                <h1 class="context">與題目的要求符合過關</h1>
+                <h1 id="end">準備好了嗎？點擊遊戲開始！</h1>
+            </div>
+            <div class="topic"></div>
+            <div class="lives"></div>
+            <div class="game_area">
+                <div class="water_scale"></div>
+                <div class="water_container">
+                    <div class="milliliterContainer">
+                        <li class="top">10</li>
+                        <li class="mid">5</li>
+                        <li class="bottom">0</li>
+                    </div>
+                    <div class="water">
+                    </div>
+                    <ul class="scales">
+                    </ul>
+                </div>
+                <div class="water_control">
+                    <div class="updown">⇅</div>
+                </div>
+            </div>
+            <div class="result">
+                <h1 id="bingo">Ｏ</h1>
+                <h1 id="dada">Ｘ</h1>
+                <h1></h1>
+            </div>
+            <div id="firework-container"></div>
+        </div>
+        <div class="gameBtn optionsBtn">
+            <button id="lastBtn">上一關</button>
+            <button id="startBtn">遊戲開始</button>
+            <button id="nextBtn">下一關</button>
+            <button id="hintBtn">提示</button>
+            <button id="submitBtn" class="jumpBtn">送出答案</button>
+        </div>
+    </div>
+    <div class="script">
+        <script src="src/script.js" type="text/JavaScript"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+@import url(../../game_view/css/connection_game.css);
+
+* {
+    /* border: solid 2px black; */
+    /* position: relative; */
+}
+
+/* hint */
+.overlay{
+    /* display: block; */
+}
+
+.hintContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.hintContainer .leftArea, .hintContainer .rightArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 5%;
+}
+.hintContainer .contentArea {
+    padding: 5%
+}
+
+/* Game Area */
+.gameArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Question Area */
+.gameArea .leftArea, .gameArea .rightArea {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 8%;
+    margin-bottom: 2%;
+}
+.gameArea .leftArea {
+    margin-left: 2%;
+}
+.rightArea {
+    margin-right: 2%;
+}
+
+/* Ever Question Area*/
+.questionArea, .answerArea {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ContenArea */
+.contentArea {
+    position: relative;
+}
+.contentArea h1{
+    margin: 0;
+}
+
+/* Left Area */
+.leftArea .contentArea {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-size: 100% 100%;
+    background-image: url('./assets/clock.png');
+}
+.leftArea .hour, .leftArea .minute {
+    position: absolute;
+    z-index: 10;
+    bottom: 50%;
+    left: 45%;
+    transform-origin: bottom center;
+  }
+  
+.leftArea .hour {
+    transform-origin: bottom;
+    width: 10%;
+    height: 25%;
+    background-size: 100% 100%;
+    background-image: url('./assets/hour.png');
+}
+  
+.leftArea .minute {
+    transform-origin: bottom;
+    width: 10%;
+    height: 40%;
+    background-size: 100% 100%;
+    background-image: url('./assets/minite.png');
+}
+
+/* Right Area */
+.rightArea .contentArea {
+    display: flex;
+    align-items: center;
+}
+.rightArea .contentArea::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -15%;
+    width: 130%;
+    height: 150%;
+    background-image: url('./assets/digital_clock.png');
+    background-size: 100% 100%;
+    background-position: center;
+    z-index: -1;
+}
+
+
+.rightArea .contentArea .hour::after {
+    content: "：";
+}
+.rightArea .contentArea > * {
+    flex: 5;
+}
+/* Dot */
+.leftArea .dot {
+    margin-left: 5%;
+}
+.rightArea .dot {
+    margin-right: 10%;
+}

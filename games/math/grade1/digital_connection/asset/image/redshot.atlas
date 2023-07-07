@@ -1,0 +1,61 @@
+
+redshot.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+firework_red0
+  rotate: false
+  xy: 1, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+firework_red1
+  rotate: false
+  xy: 43, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+firework_red2
+  rotate: false
+  xy: 85, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+firework_red3
+  rotate: false
+  xy: 127, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+firework_red4
+  rotate: false
+  xy: 169, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+firework_red5
+  rotate: false
+  xy: 211, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+firework_red6
+  rotate: false
+  xy: 253, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+firework_red7
+  rotate: false
+  xy: 295, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,14 @@
+@import url(../../game_view/css/combination_lock.css);
+
+/* For Develop */
+* {
+    /* border: solid 2px black; */
+}
+
+.topArea {
+    height: 60%;
+}
+
+.topArea h2{
+    margin: 0 0 0 10px;
+}

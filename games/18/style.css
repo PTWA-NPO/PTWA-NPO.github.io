@@ -1,0 +1,13 @@
+@import url(../../game_view/css/combination_lock.css);
+
+/* For Develop */
+* {
+    /* border: solid 2px black; */
+}
+
+.topArea :nth-child(1) {
+    width: 100%;
+    height: 374px;
+    background-image: url(./assets/images/1.png);
+    background-size: cover;
+}

@@ -1,0 +1,134 @@
+@import url(../../game_view/css/connection_game.css);
+
+* {
+    /* border: solid 2px black; */
+}
+
+/* hint */
+.overlay{
+    /* display: block; */
+}
+
+.hintContainer{
+    display: flex;
+    justify-content: center;
+}
+.hintContainer .left, .hintContainer .right{
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
+.hintContainer .left{
+    margin: 5em 0 2em 20em;
+}
+.hintContainer .left .topicArea {
+    margin-top: 1rem;
+}
+.hintContainer .right{
+    margin: 5em 20rem 2em 0em;
+}
+.hintContainer .right .fraction{
+    margin-top: 2rem;
+}
+/* Game Area */
+.gameArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameArea .left, .gameArea .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    flex: 5;
+}
+/* Question */
+.gameArea .left {
+    margin: 4rem 2em 1rem 4rem;
+}
+.left .questionArea {
+    position: relative;
+    display: flex;
+    margin-top: 1em;
+    width: 150px;
+    height: 10em;
+    align-items: center;
+}
+.topicArea {
+    position: relative;
+    flex: 7;
+    height: 100%;
+}
+
+/* water */
+.topicArea .water{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #02bbdc;
+    bottom: 0;
+}
+/* scalls */
+.topicArea .scalls{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 1.5em;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+}
+.topicArea .scalls li{
+    list-style: none;
+    border: solid 1px black;
+}
+/* cup */
+.topicArea .cup{
+    position: absolute;
+    border: solid 3px black;
+    box-sizing: border-box;
+    border-top: none;
+    width: 100%;
+    height: 100%;
+}
+/* Answer */
+.gameArea .right {
+    margin: 4rem 2em 1rem 4rem;
+    align-items: end;
+}
+.right .answerArea {
+    position: relative;
+    display: flex;
+    width: 150px;
+    flex: 2;
+    align-items: center;
+}
+
+/* Fraction */
+.fraction{
+    display: flex;
+    width: 150px;
+    font-size: large;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fraction .top, .fraction .bottom {
+    flex: 5;
+}
+.fraction .fractionalLine{
+    border: solid 2px black;
+    width: 80px;
+}
+.fraction h1{
+    margin: 0;
+}
+
+/* dot */
+.gameArea .questionArea .dot {
+    margin-left: 1em;
+}
+.gameArea .answerArea .dot {
+    margin-right: 1em;
+}

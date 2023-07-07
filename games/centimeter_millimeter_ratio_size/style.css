@@ -1,0 +1,6 @@
+@import url(../../game_view/css/size_comparison.css);
+
+.Question{
+    font-size: 30px;
+    width: 160px;
+}

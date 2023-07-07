@@ -1,0 +1,256 @@
+* {
+    /* border: solid 2px black; */
+}
+.navbar-toggler {
+    z-index:1000;
+    border: 10px;
+    color: blueviolet;
+    background-color: white;
+    margin-top: 10px;
+}
+.navbar-collapse {
+    z-index: 1000;
+}
+
+.nav-link{
+    background-color: #57b9d985;
+    
+}
+
+.navbar-brand {
+   margin-bottom: 8px;
+}
+
+.nav2 {
+    display: none;
+}
+
+.nav-link:hover .nav1{
+    display: none;
+    transition-delay: 5s;
+}
+
+.nav-link:hover .nav2{
+    display: block;
+    transition-delay: 5s;
+}
+
+.sidebar {
+    float: left;
+    /*text-align: left; */
+
+    padding-top: 90px;
+}
+
+.nav-item2{
+    padding-top: 20px;
+}
+/* Unit */
+.mathUnit {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    font-size: 30px;
+    color: #eee;
+
+}
+.mathUnit button{
+    font-size: 30px;
+    width: 50px;
+    border-radius: 50%;
+    border: solid 2px #7b8e5d;
+    background-color:#ADC090;
+}
+.mathUnit button:hover{
+    color: aliceblue;
+    background-color:#7b8e5d;
+}
+
+body {
+    position: relative;
+    right: 0;
+    font-family: '微軟正黑體';
+    margin: 0;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Previous Btn */
+.previousPage {
+    position: absolute;
+    left: 50px;
+    background-color: #eee;
+    color: #8e8e9c;
+    border-radius: 30px;
+    height: 50px;
+    width: 200px;
+    border: 3px solid #02bbdc;
+    font-size: 30px;
+}
+.previousPage:hover {
+    color: #fff;
+    transition: 0.5s;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.3rem;
+}
+
+.gameWindow {
+    display: flex;
+    flex-direction: column;
+}
+
+.myCanvas {
+    position: relative;
+    display: flex;
+    width: 900px;
+    height: 650px;
+    background-color: #eee;
+    border: 5px solid #02bbdc;
+    border-radius: 10px;
+    box-sizing: content-box;
+}
+
+/* Rule */
+.gameRule {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+.gameRule h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+.gameRule>:first-child {
+    flex: 1;
+    margin: 4rem;
+}
+.gameRule .context {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 8rem;
+}
+.gameRule>:last-child {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    align-items: end;
+    margin: 4rem;
+}
+/* Game Btn */
+.gameBtn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gameBtn * {
+    border:2px solid #02bbdc;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameBtn *:hover {
+    color: #fff;
+    transform: translate(0px, -5px);
+    transition: 0.5s;
+}
+
+/* level */
+.levelBtn {
+    margin: 0;
+}
+.levelBtn * {
+    background-color: #eee;
+    color: #8e8e9c;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.levelBtn .active {
+    color: #fff;
+    transition: 0.5s;
+}
+
+.win {
+    border:2px solid green;
+    background-color: green;
+    color: #fff;
+}
+
+/* option */
+.optionsBtn :first-child {
+    margin-left: 10px;
+}
+.optionsBtn * {
+    color: #fff;
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px 10px 0 0;
+    box-sizing: border-box;
+}
+
+.optionsBtn *:hover {
+    background-color: #eee !important; 
+    color: #8e8e9c;
+    transition: 0.5s;
+}
+
+.optionsBtn #startBtn {
+    flex: 4;
+}
+.optionsBtn #submitBtn {
+    background-color: #02dc31 !important;
+    border-color: #02dc31 !important;
+}
+.optionsBtn #submitBtn:hover {
+    color: #8e8e9c;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.3);
+    transition: 0.5s;
+}
+  
+.jumpBtn {
+    animation: jump 1s ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes jump {
+0%, 100%{
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-5px);
+}
+}
+.shadow {
+    box-shadow: 50px 50px 50px rgba(0,0,0,0.7);
+}
+
+/* Game */
+.gameIframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* display: none; */
+    display: block;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}

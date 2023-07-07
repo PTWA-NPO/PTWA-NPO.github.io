@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div>
+        <div><canvas id="canvas1"></canvas>
+            </div>
+        <div>            
+            <button id="Btn1" class="chooseBtn">1</button>
+            <button id="Btn2" class="chooseBtn">2</button>
+            <button id="Btn3" class="chooseBtn">3</button>
+            <button id="Btn4" class="chooseBtn">4</button>
+            <button id="Btn5" class="chooseBtn">5</button>
+            <button id="Btn6" class="chooseBtn">6</button>
+            <button id="Btn7" class="chooseBtn">7</button>
+            <button id="Btn8" class="chooseBtn">8</button>
+            <button id="Btn9" class="chooseBtn">9</button>
+        </div>
+        <div>
+            <button id="startBtn" class="stateBtn">遊戲開始</button>
+            <button id="nextLevel" class="stateBtn">下一關</button>
+            <button id="restart" class="stateBtn" onclick="window.location.reload()">重新開始</button>
+            
+        </div>
+        <script src="mathScript.js" type="text/JavaScript"></script>
+        
+    </div>
+    <!--- Sound src-->
+    <audio id="correct" src="asset/correct_sound_effect.mp3"></audio>
+    <audio id="wrong" src="asset/wrong_sound_effect.mp3"></audio>
+</body>
+</html>

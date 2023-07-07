@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es6",
+      "baseUrl": ".",
+      "paths":{
+        "Phaser":["../phaser/src/phaser.js"]
+      }
+    },
+    "exclude": ["node_modules"],
+  }

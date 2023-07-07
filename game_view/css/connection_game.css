@@ -1,0 +1,35 @@
+@import url(./game_style.css);
+
+* {
+    /* border: solid 2px black; */
+}
+
+/* Drawing Area */
+.drawingArea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* Line */
+.line {
+    stroke: black;
+    stroke-width: 5;
+}
+.correctLine {
+    stroke: green !important;
+    stroke-width: 5;
+}
+.wrongLine {
+    stroke: red !important;
+    stroke-width: 5;
+}
+
+/* dot */
+.gameArea .questionArea .dot, .gameArea .answerArea .dot {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    min-width: 20px;
+}

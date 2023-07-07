@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>10000以內的數比大小</title>
+    <script src="../../../../libs/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="audio">
+        <audio id="correct" src="../../../../assets/sounds/game_sounds/correct_sound_effect.mp3"></audio>
+        <audio id="wrong" src="../../../../assets/sounds/game_sounds/wrong_sound_effect.mp3"></audio>
+        <audio id="win" src="../../../../assets/sounds/game_sounds/applause_fireworks.mp3" duration="3"></audio>
+    </div>
+    <div class="gameWindow">
+        <div class="gameBtn levelBtn">            
+            <button id="1">1</button>
+            <button id="2">2</button>
+            <button id="3">3</button>
+            <button id="4">4</button>
+            <button id="5">5</button>
+        </div>
+        <div class="myCanvas">
+            <div class="gameRule">
+                <h1 id="start">遊戲玩法：
+                    <span id="version">V0.1.0</span>
+                </h1>
+                <div class="context">
+                    <h1>根據題目拖移正確符號進入答案框內</h1>
+                    <h1>正確即可過關</h1>
+                    <h1>點擊💾可下載遊戲紀錄</h1>
+                    <h1>困惑時可點擊提示</h1>
+                </div>
+                <h1 id="end">準備好了嗎？點擊遊戲開始！</h1>
+            </div>
+            <div class="topic">
+            </div>
+            <!-- <div class="lives"></div> -->
+            <div class="overlay">
+                <div class="hintContainer">
+                    <h1 >
+                        提示：<br>
+                        先比千位，千位相同再比百位，<br>
+                        如果還是相同，再慢慢往下比較。
+                    <span class="closeHintBtn">Ｘ</span>
+                    </h1>
+                    <div class="hintDigitsContainer">
+                        <div class="thousand">
+                            <h1>千位</h1>
+                            <hr>
+                            <h1 class="DigitsSpace"></h1>
+                        </div>
+                        <div class="hundred">
+                            <h1>百位</h1>
+                            <hr>
+                            <h1 class="DigitsSpace"></h1>
+                        </div>
+                        <div class="ten">
+                            <h1>十位</h1>
+                            <hr>
+                            <h1 class="DigitsSpace"></h1>
+                        </div>
+                        <div class="digits">
+                            <h1>個位</h1>
+                            <hr>
+                            <h1 class="DigitsSpace"></h1>
+                        </div>
+                    </div>
+                    <div class="digitsCheckSymbol">
+                        ✔
+                    </div>
+                </div>
+            </div>
+            <div class="game_area">
+                <div class="questionDisplay">
+                    <div class="firstValueContainer">
+                        <div class="thousand">
+                            <h1>千位</h1>
+                            <hr>
+                            <p class="Question">n1</p>
+                        </div>
+                        <div class="hundred">
+                            <h1>百位</h1>
+                            <hr>
+                            <p class="Question">n2</p>
+                        </div>
+                        <div class="ten">
+                            <h1>十位</h1>
+                            <hr>
+                            <p class="Question">n3</p>
+                        </div>
+                        <div class="digits">
+                            <h1>個位</h1>
+                            <hr>
+                            <p class="Question">n</p>
+                        </div>
+                    </div>
+
+                    <div class="compare">
+                    </div>
+
+                    <div class="secondValueContainer">
+                        <div class="thousand">
+                            <h1>千位</h1>
+                            <hr>
+                            <p class="Question">n</p>
+                        </div>
+                        <div class="hundred">
+                            <h1>百位</h1>
+                            <hr>
+                            <p class="Question">n</p>
+                        </div>
+                        <div class="ten">
+                            <h1>十位</h1>
+                            <hr>
+                            <p class="Question">n</p>
+                        </div>
+                        <div class="digits">
+                            <h1>個位</h1>
+                            <hr>
+                            <p class="Question">n</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="answerDisplay">
+                    <div class="moreThan">
+                        >
+                    </div>
+
+                    <div class="lessThan">
+                        <
+                    </div>
+
+                    <div class="equal">
+                        =
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <h1 id="bingo">Ｏ</h1>
+                <h1 id="dada">Ｘ</h1>
+            </div>
+            <div id="firework-container"></div>
+        </div>
+        <div class="gameBtn optionsBtn">
+            <button id="lastBtn">上一關</button>
+            <button id="startBtn">遊戲開始</button>
+            <button id="nextBtn">下一關</button>
+            <button id="hintBtn">提示</button>
+            <button id="recordBtn">💾</button>
+            <button class="jumpBtn" id="submitBtn">送出答案</button>
+        </div>
+    </div>
+    <div class="script">
+        <script src="src/script.js" type="module"></script>
+    </div>
+</body>
+</html>

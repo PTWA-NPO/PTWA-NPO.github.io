@@ -1,0 +1,450 @@
+* {
+    /* border: solid 2px black; */
+}
+
+body {
+    position: relative;
+    right: 0;
+    font-family: '微軟正黑體';
+    margin: 0;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameWindow {
+    position: aboslute;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 710px;
+}
+
+.myCanvas {
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 600px;
+    background-color: #eee;
+    border:5px solid #02bbdc;
+    background-color: #eee;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.myCanvas .topic {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.lives{
+    position: absolute;
+    top: 2%;
+    left: 60%;
+    width: 100px;
+}
+
+/* hint */
+.overlay{
+    position: relative;
+    display: none;
+    /* display: block; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.hintContainer{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 1);
+    border: 5px solid #b3e6e5;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.hintContainer .water_container {
+    margin-right: 10px;
+}
+.milliliterHint {
+    flex: 3;
+    margin: 10% 0% 3% 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.literHint {
+    flex: 1;
+    margin-right: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.literHint :nth-child(3)  {
+    margin-top: 35%;
+}
+.literHint .water_container  {
+    height: 120px;
+    margin-left: 10px;
+}
+.literHint .water_container .liters::after, .milliliterHint .water_container .milliliter::after{
+    content: "ml";
+}
+.dividing{
+    position: absolute;
+    top: 3%;
+    transform: translateX(-20px);
+    width: 3px;
+    height: 95%;
+    background-color: #8e8e9c;
+}
+.hintContainer > h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    color: #000;
+    cursor: pointer;
+}
+.hintContainer h2 {
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    top: 10%;
+    background-color: #02bbdc;
+}
+.hintContainer h2::after {
+    content: 'ml';
+}
+.literHint h2 {
+    top: 2%;
+    margin-left: 10px;
+}
+.literHint h2::after {
+    content: 'L';
+}.closeHintBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+}
+
+.closeHintBtn:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+/* line */
+svg {
+    position: absolute;
+    /* z-index: 999; */
+    width: 800px;
+    height: 100%;
+    top: 0%;
+    /* background-color: #eee; */
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.line {
+    stroke: black;
+    stroke-width: 5;
+}
+.correctLine {
+    stroke: green;
+    stroke-width: 5;
+}
+.wrongLine {
+    stroke: red;
+    stroke-width: 5;
+}
+
+.myCanvas .gameRule {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+.myCanvas .gameRule *{
+    font-size: 40px;
+}
+
+.myCanvas .gameRule .context{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+
+.myCanvas .gameRule #start{
+    transform: translateX(5%);
+}
+
+.myCanvas .gameRule #start #version {
+    position: absolute;
+    font-size: 20px; 
+    top: 0%;
+    right: 10%;
+    color: #bbb;
+}
+
+.myCanvas .gameRule #end{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+}
+
+.gameBtn {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gameBtn * {
+    border:2px solid #02bbdc;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameBtn *:hover {
+    transform: translate(0px, -5px);
+    transition: 0.5s;
+}
+
+/* level */
+.levelBtn {
+    padding-top: 10px;
+    margin: 0;
+}
+.levelBtn * {
+    background-color: #eee;
+    color: #8e8e9c;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.levelBtn *:hover,.levelBtn *.active {
+    background-color: #02bbdc;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.bingo {
+    border:2px solid green;
+    background-color: green;
+    color: #fff;
+}
+
+/* option */
+.optionsBtn * {
+    background-color: #02bbdc;
+    color: #fff;
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    box-sizing: border-box;
+}
+
+.optionsBtn *:hover {
+    background-color: #eee;
+    color: #8e8e9c;
+    transition: 0.5s;
+}
+
+.optionsBtn #startBtn {
+    flex: 4;
+}
+.shadow {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+}
+
+/* container */
+
+.game_area {
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    bottom: 0%;
+    left: 0%;
+    margin-bottom: 20px;
+}
+
+.game_area .left {
+    position: absolute;
+    display: flex;
+    width: 30%;
+    height: 100%;
+    left: 3%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.game_area .right {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 115%;
+    width: 20%;
+    top: -14%;
+    right: 0%;
+}
+.left .milliliter_container, .milliliterHint .water_container {
+    position: relative;
+    height: 60px;
+}
+.right .water_container {
+    top: 2%;
+    margin-top: 20px;
+    height: 120px;
+}
+.left .water_container {
+    margin-left: 10px;
+    height: 100%;
+}
+.water_container {
+    position: relative;
+    display: inline-block;
+    border: 2px solid #000;
+    border-top: none;
+    width: 100px;
+}
+.water_container .liters,.water_container .milliliter{
+    position: absolute;
+    z-index: 99;
+    right: 10%;
+    top: -10%;
+}
+/* scale */
+.water_container .scales{
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.water_container .scales *{
+    height: 0;
+    width: 10px;
+    border: solid 1px black;
+}
+.water_container .scales :first-child {
+    border: none;
+}
+.water_container .scales :nth-child(11) {
+    width: 20px
+}
+
+.water_container .scales :last-child {
+    width: 20px
+}
+.water_container .scales :nth-child(6) {
+    width: 15px
+}
+
+.water_container .scales :nth-child(16) {
+    width: 15px
+}
+
+/* water */
+.water {
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    background-color: #02bbdc;
+}
+/* dot */
+.milliliterDots,.literDots {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    width: 5%;
+}
+
+.milliliterDots .circle, .literDots .circle {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+.milliliterDots {
+    height: 100%;
+    right: 0;
+    transform: translateX(30px);
+}
+.literDots {
+    height: 100%;
+    top: 3%;
+    transform: translateX(-40px);
+}
+
+/* fireworks */
+
+#firework-container {
+    position: absolute;
+    display: none;
+    z-index: 99;
+    top: 15%;
+    left: 5%;
+    width : 90%;
+    height: 85%;
+}
+
+/* result */
+
+.result #bingo,#dada {
+    position:absolute;
+    margin: 0;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 99;
+    display: none;
+    font-size: 500px;
+}
+
+
+.result #bingo {
+    color: green;
+}
+.result #dada {
+    color: red;
+}
+
+.jumpBtn {
+    animation: jump 1s ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes jump {
+0%, 100%{
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-5px);
+}
+}

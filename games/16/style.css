@@ -1,0 +1,27 @@
+@import url(../../game_view/css/combination_lock.css);
+
+/* For Develop */
+* {
+    /* border: solid 2px black; */
+}
+
+.topArea img {
+    position: absolute;
+    z-index: 10;
+    max-width: 100%;
+    height: auto;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.grid > div {
+    display: inline-block;
+    border: 1px solid black;
+    width: 38px;
+    height: 38px;
+}

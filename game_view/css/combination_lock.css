@@ -1,0 +1,118 @@
+@import url(../../game_view/css/game_style.css);
+
+/* For Develop */
+* {
+}
+
+.gameArea {
+    display: flex;
+    flex-direction: column;
+}
+
+.gameArea > * {
+    display: flex;
+}
+
+.topArea {
+    position: relative;
+    margin-top: 70px;
+    resize: both;
+}
+
+.bottomArea {
+    align-items: end;
+    overflow: auto;
+}
+
+.answerContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+.answerArea {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answerArea * {
+    display: inline-block;
+}
+
+/* Combination Lock */
+input[type="number"] {
+    width: 30px;
+    padding: 0px 0px;
+    font-size: 50px;
+    border: none;
+    text-align: center;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield; 
+    appearance: textfield;
+}
+
+/* WebKit（Chrome Safari）*/
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.decrementButton, .incrementButton {
+    font-size: 50px;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+    color: #bbb;
+}
+
+/* Drawing！ */
+#drawArea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.drawingTool {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: end;
+    margin: 10px 10px 0 0;
+}
+
+.drawingTool * {
+    border-radius: 5px;
+    font-size: larger;
+}
+
+.pencil {
+    right: 1rem;
+}
+
+.clicked-bg {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+.cursor {
+    display: none;
+    position: absolute;
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 1000; /* Ensure the cursor appears on top of other elements */
+}
+
+.cursor-eraser {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+}

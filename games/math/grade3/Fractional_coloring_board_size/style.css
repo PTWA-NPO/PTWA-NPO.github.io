@@ -1,0 +1,438 @@
+* {
+    /* border: solid 2px black; */
+    user-select: none;
+}
+
+body {
+    position: relative;
+    right: 0;
+    font-family: '微軟正黑體';
+    margin: 0;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameWindow {
+    position: aboslute;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 710px;
+}
+
+.myCanvas {
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 600px;
+    background-color: #eee;
+    border:5px solid #02bbdc;
+    background-color: #eee;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.myCanvas .topic {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.lives{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    width: 100px;
+    transform: translateX(-25%);
+    right: 0;
+}
+
+/* hint */
+.overlay{
+    position: relative;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.hintContainer{
+    display: flex;
+    flex-flow: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 1);
+    border: 5px solid #b3e6e5;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.hintContainer > h1{
+    line-height: 70px;
+    margin: 0;
+    margin-top: 120px;
+    color: #000;
+    cursor: pointer;
+}
+
+.scoreInHint{
+    width: 80px;
+    text-align: center;
+    margin: 0px;
+    margin-top: 100px;
+    transform: scale(150%, 150%);
+    font-weight: bold; 
+}
+
+.scoreInHint>h1{
+    margin: 0px;
+}
+
+.scoreInHint>hr{
+    font-weight: bold;
+    border: 1.5px solid black;
+}
+
+.closeHintBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+}
+
+.closeHintBtn:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+/* Rule */
+.myCanvas .gameRule {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+.myCanvas .gameRule *{
+    font-size: 40px;
+}
+
+.myCanvas .gameRule .context{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+
+.myCanvas .gameRule #start{
+    transform: translateX(5%);
+}
+
+.myCanvas .gameRule #start #version {
+    position: absolute;
+    font-size: 20px; 
+    top: 0%;
+    right: 10%;
+    color: #bbb;
+}
+
+.myCanvas .gameRule #end{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+}
+
+.gameBtn {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gameBtn * {
+    border:2px solid #02bbdc;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameBtn *:hover {
+    transform: translate(0px, -5px);
+    transition: 0.5s;
+}
+
+/* level */
+.levelBtn {
+    padding-top: 10px;
+    margin: 0;
+}
+.levelBtn * {
+    background-color: #eee;
+    color: #8e8e9c;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.levelBtn *:hover,.levelBtn *.active {
+    background-color: #02bbdc;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.bingo {
+    border:2px solid green;
+    background-color: green;
+    color: #fff;
+}
+
+/* option */
+.optionsBtn * {
+    background-color: #02bbdc;
+    color: #fff;
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    box-sizing: border-box;
+}
+
+.optionsBtn *:hover {
+    background-color: #eee;
+    color: #8e8e9c;
+    transition: 0.5s;
+}
+
+.optionsBtn #startBtn {
+    flex: 4;
+}
+.optionsBtn #submitBtn {
+    flex: 4;
+    background-color: #02dc31;
+    border-color: #02dc31;
+}
+  
+.jumpBtn {
+    animation: jump 1s ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes jump {
+0%, 100%{
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-5px);
+}
+}
+.shadow {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+}
+
+/* container */
+
+.game_area {
+    position: absolute;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 85%;
+    bottom: 0%;
+    left: 0%;
+    margin-bottom: 20px;
+}
+
+/* fireworks */
+
+#firework-container {
+    position: absolute;
+    display: none;
+    z-index: 99;
+    top: 15%;
+    left: 5%;
+    width : 90%;
+    height: 85%;
+}
+
+/* result */
+
+.result #bingo,#dada {
+    position:absolute;
+    margin: 0;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 99;
+    display: none;
+    font-size: 500px;
+}
+
+.result #bingo {
+    color: green;
+}
+.result #dada {
+    color: red;
+}
+
+.firstValueContainer, .secondValueContainer{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.value{
+    margin-right: 20px;
+}
+
+.unit{
+    font-size: 50px;
+}
+
+.firstValueContainer .Question:nth-child(2), .secondValueContainer .Question:nth-child(2){
+    border-top:3px solid #000;
+    width: 100%;
+}
+
+.Question{
+    text-align: center;
+    vertical-align: center;
+    transform: translateY(-5px);
+    font-size: 50px;
+    margin: 0px;
+}
+
+
+.questionDisplay{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.answerDisplay{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    
+}
+
+.answerDisplay *{
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    margin: 0px;
+    padding: 0px;
+    transform: translate(0px, 0px);
+}
+
+.compare{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 3px solid rgb(2,187,220);
+    border-radius: 10px;
+}
+
+.compare h1{
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 100px;
+    box-sizing: border-box;
+    transform: translateY(-8px);
+}
+
+.context h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pear{
+    display: flex;
+    flex-flow: column;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: #8e8e9c;
+}
+
+.pearFirstRow, .pearSecondRow, .pearThirdRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pearFirstRow>img, .pearSecondRow>img, .pearThirdRow>img{
+    cursor: pointer;
+    width: 50px;
+}
+
+.questionImg{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.circleFraction{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid black;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.circleFraction svg{
+    top: -2px;
+    left: -2.5px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.circleFraction path{
+    stroke: black;
+    fill: none;
+    stroke-width: 2px;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    fill:#8e8e9c;
+}
+
+.firstImgContainer, .secondImgContainer{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

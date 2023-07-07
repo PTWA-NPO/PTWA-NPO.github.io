@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <title>鍵盤練習網頁</title>
+        <link rel="icon" href="image/220124.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body style="position:relative;" onload="init()" >
+        <header>
+            <img src="image/Logo.png" alt="協會Logo" height="8%" width="8%" style="float:left;">
+            <div class="container">
+                <div class="head_item"   style="flex:0.05"></div>
+                <div class="head_item header" style="flex:3; color:#02bbdc;"> 社團法人中華民國愛自造者學習協會</div>
+                <div class="head_item" style="flex:1.2; padding-top: 5px;"> <img id="image1" src="image/image_2-1.png" alt="捐款支持" width="100px"></div>
+                <div class="head_item" style="flex:1.2; padding-top: 5px; margin-left: 3px;"> <img id="image2" src="image/image_3-1.png" alt="志工支援" width="100px"></div>
+                <div class="head_item" style="flex:0.8;"> <a href="#" class="header">關於我們</a></div>
+                <div class="head_item" style="flex:1;"> <a href="#" class="header">我們的耕耘</a></div>
+                <div class="head_item" style="flex:0.8;"> <a href="#" class="header">教材分享</a></div>
+                <div class="head_item" style="flex:1.2"></div>
+            </div>
+            <hr style="opacity: 0.5;">
+        </header>
+        <script> 
+            var img1 = document.getElementById("image1");
+            img1.addEventListener("mouseover", function(){
+                this.src = "image/image_2.png";
+            })
+
+            img1.addEventListener("mouseout", function(){
+                this.src = "image/image_2-1.png";
+            })
+
+            var img2 = document.getElementById("image2");
+            img2.addEventListener("mouseover", function(){
+                this.src = "image/image_3.png";
+            })
+
+            img2.addEventListener("mouseout", function(){
+                this.src = "image/image_3-1.png";
+            })
+        </script>
+        <button class="downloadBtn">下載歷史成績</button>
+        <table>
+            <tr><td>遊戲時間設定：</td><td><input type="text" id="gameTime" value=60> </td></tr>
+        </table>
+        <div style="text-align: center; margin: 10px;"> 音源來自於：屏東大學特教系吳庭儀同學 </div>
+        <div id="owo">
+            <img src="image_2/ㄅ布丁.jpg" class="image_2" id="image_49"/>
+            <img src="image_2/ㄉ蛋糕.jpg" class="image_2" id="image_50"/>
+            <img src="image_2/ㄓ豬.jpg" class="image_2" id="image_53"/>
+            <img src="image_2/ㄚ螞蟻.jPG" class="image_2" id="image_56"/>
+            <img src="image_2/ㄞ愛心.jpg" class="image_2" id="image_57"/>
+            <img src="image_2/ㄢ按鈕.jpg" class="image_2" id="image_48"/>
+            <img src="image_2/ㄦ耳朵.jpg" class="image_2" id="image_189"/>
+
+            <img src="image_2/ㄆ葡萄.jpg" class="image_2" id="image_81"/>
+            <img src="image_2/ㄊ天空.jpg" class="image_2" id="image_87"/>
+            <img src="image_2/ㄍ狗.jpg" class="image_2" id="image_69"/>
+            <img src="image_2/ㄐ雞蛋.jpg" class="image_2" id="image_82"/>
+            <img src="image_2/ㄔ吃飯.jpg" class="image_2" id="image_84"/>
+            <img src="image_2/ㄗ嘴巴.jpg" class="image_2" id="image_89"/>
+            <img src="image_2/一衣服.jpg" class="image_2" id="image_85"/>
+            <img src="image_2/ㄛ老婆婆.jpg" class="image_2" id="image_73"/>
+            <img src="image_2/ㄟ尾巴.jpg" class="image_2" id="image_79"/>
+            <img src="image_2/ㄣ噴水池.jfif" class="image_2" id="image_80"/>
+
+            
+            <img src="image_2/ㄇ貓.jpg" class="image_2" id="image_65"/>
+            <img src="image_2/ㄋ奶茶.jpg" class="image_2" id="image_83"/>
+            <img src="image_2/ㄎ烤肉.jpg" class="image_2" id="image_68"/>
+            <img src="image_2/ㄑ氣球.jpg" class="image_2" id="image_70"/>
+            <img src="image_2/ㄕ老師.jpg" class="image_2" id="image_71"/>
+            <img src="image_2/ㄘ草莓.jpg" class="image_2" id="image_72"/>
+            <img src="image_2/ㄨ午睡.jpg" class="image_2" id="image_74"/>
+            <img src="image_2/ㄜ鱷魚.jpg" class="image_2" id="image_75"/>
+            <img src="image_2/ㄠ泡泡.jpg" class="image_2" id="image_76"/>
+            <img src="image_2/ㄤ陽光.jpg" class="image_2" id="image_186"/>
+
+            
+            <img src="image_2/ㄈ風扇.jpg" class="image_2" id="image_90"/>
+            <img src="image_2/ㄌ藍色.jpg" class="image_2" id="image_88"/>
+            <img src="image_2/ㄏ花.jpg" class="image_2" id="image_67"/>
+            <img src="image_2/ㄒ香蕉.jpg" class="image_2" id="image_86"/>
+            <img src="image_2/ㄖ日曆.jpg" class="image_2" id="image_66"/>
+            <img src="image_2/ㄙ森林.jpg" class="image_2" id="image_78"/>
+            <img src="image_2/ㄩ魚.jpg" class="image_2" id="image_77"/>
+            <img src="image_2/ㄝ聖誕節.jpg" class="image_2" id="image_188"/>
+            <img src="image_2/ㄡ海鷗.jpg" class="image_2" id="image_190"/>
+            <img src="image_2/ㄥ風箏.jfif" class="image_2" id="image_191"/>
+            <p class="center" id="opo"></p>
+        </div>
+        <div id="keyboard">
+            <div class="container keyboard_container" style="height:13%;">
+                <div class="keyboard_item keyboard_item_1" style="flex:1.2;"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+                <div class="keyboard_item keyboard_item_1"><span ></span></div>
+            </div>
+            <div class="container keyboard_container">
+                <audio data-key="correct_49" src="music/ㄅ 布丁.m4a"></audio>
+                <audio data-key="correct_50" src="music/ㄉ 蛋糕.m4a"></audio>
+                <audio data-key="correct_53" src="music/ㄓ 豬.m4a"></audio>
+                <audio data-key="correct_56" src="music/ㄚ 螞蟻.m4a"></audio>
+                <audio data-key="correct_57" src="music/ㄞ 愛心.m4a"></audio>
+                <audio data-key="correct_48" src="music/ㄢ 按鈕.m4a"></audio>
+                <audio data-key="correct_189" src="music/ㄦ 耳朵.m4a"></audio>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div data-key="keyboard_49" class="keyboard_item"   style="flex:1;"><span id="49">ㄅ</span></div>
+                <div data-key="keyboard_50" class="keyboard_item"   style="flex:1;"><span id="50">ㄉ</span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div data-key="keyboard_53" class="keyboard_item"   style="flex:1;"><span id="53">ㄓ</span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div data-key="keyboard_56" class="keyboard_item"   style="flex:1;"><span id="56">ㄚ</span></div>
+                <div data-key="keyboard_57" class="keyboard_item"   style="flex:1;"><span id="57">ㄞ</span></div>
+                <div data-key="keyboard_48" class="keyboard_item"   style="flex:1;"><span id="48">ㄢ</span></div>
+                <div data-key="keyboard_189" class="keyboard_item"   style="flex:1;"><span id="189">ㄦ</span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:2;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+            </div>
+            <div class="container keyboard_container">
+                <audio data-key="correct_81" src="music/ㄆ 葡萄.m4a"></audio>
+                <audio data-key="correct_87" src="music/ㄊ 天空.m4a"></audio>
+                <audio data-key="correct_69" src="music/ㄍ 狗.m4a"></audio>
+                <audio data-key="correct_82" src="music/ㄐ 雞蛋.m4a"></audio>
+                <audio data-key="correct_84" src="music/ㄔ 吃飯.m4a"></audio>
+                <audio data-key="correct_89" src="music/ㄗ 嘴巴.m4a"></audio>
+                <audio data-key="correct_85" src="music/一 衣服.m4a"></audio>
+                <audio data-key="correct_73" src="music/ㄛ 老婆婆.m4a"></audio>
+                <audio data-key="correct_79" src="music/ㄟ 尾巴.m4a"></audio>
+                <audio data-key="correct_80" src="music/ㄣ 噴水池.m4a"></audio>
+                <div class="keyboard_item"   style="flex:1.4;"><span id="" style="font-size: 18px;"></span></div>
+                <div data-key="keyboard_81" class="keyboard_item"   style="flex:1;"><span id="81">ㄆ</span></div>
+                <div data-key="keyboard_87" class="keyboard_item"   style="flex:1;"><span id="87">ㄊ</span></div>
+                <div data-key="keyboard_69" class="keyboard_item"   style="flex:1;"><span id="69">ㄍ</span></div>
+                <div data-key="keyboard_82" class="keyboard_item"   style="flex:1;"><span id="82">ㄐ</span></div>
+                <div data-key="keyboard_84" class="keyboard_item"   style="flex:1;"><span id="84">ㄔ</span></div>
+                <div data-key="keyboard_89" class="keyboard_item"   style="flex:1;"><span id="89">ㄗ</span></div>
+                <div data-key="keyboard_85" class="keyboard_item"   style="flex:1;"><span id="85">ㄧ</span></div>
+                <div data-key="keyboard_73" class="keyboard_item"   style="flex:1;"><span id="73">ㄛ</span></div>
+                <div data-key="keyboard_79" class="keyboard_item"   style="flex:1;"><span id="79">ㄟ</span></div>
+                <div data-key="keyboard_80" class="keyboard_item"   style="flex:1;"><span id="80">ㄣ</span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:1.4"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+            </div>
+            <div class="container keyboard_container">
+                <audio data-key="correct_65" src="music/ㄇ 貓.m4a"></audio>
+                <audio data-key="correct_83" src="music/ㄋ  奶茶.m4a"></audio>
+                <audio data-key="correct_68" src="music/ㄎ 烤肉.m4a"></audio>
+                <audio data-key="correct_70" src="music/ㄑ 氣球.m4a"></audio>
+                <audio data-key="correct_71" src="music/ㄕ 老師.m4a"></audio>
+                <audio data-key="correct_72" src="music/ㄘ 草莓.m4a"></audio>
+                <audio data-key="correct_74" src="music/ㄨ 午睡.m4a"></audio>
+                <audio data-key="correct_75" src="music/ㄜ 鱷魚.m4a"></audio>
+                <audio data-key="correct_76" src="music/ㄠ 泡泡.m4a"></audio>
+                <audio data-key="correct_186" src="music/ㄤ 陽光.m4a"></audio>
+                <div class="keyboard_item"   style="flex:1.8;"><span id=""></span></div>
+                <div data-key="keyboard_65" class="keyboard_item"   style="flex:1;"><span id="65">ㄇ</span></div>
+                <div data-key="keyboard_83" class="keyboard_item"   style="flex:1;"><span id="83">ㄋ</span></div>
+                <div data-key="keyboard_68" class="keyboard_item"   style="flex:1;"><span id="68">ㄎ</span></div>
+                <div data-key="keyboard_70" class="keyboard_item"   style="flex:1;"><span id="70">ㄑ</span></div>
+                <div data-key="keyboard_71" class="keyboard_item"   style="flex:1;"><span id="71">ㄕ</span></div>
+                <div data-key="keyboard_72" class="keyboard_item"   style="flex:1;"><span id="72">ㄘ</span></div>
+                <div data-key="keyboard_74" class="keyboard_item"   style="flex:1;"><span id="74">ㄨ</span></div>
+                <div data-key="keyboard_75" class="keyboard_item"   style="flex:1;"><span id="75">ㄜ</span></div>
+                <div data-key="keyboard_76" class="keyboard_item"   style="flex:1;"><span id="76">ㄠ</span></div>
+                <div data-key="keyboard_186" class="keyboard_item"   style="flex:1;"><span id="186">ㄤ</span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:2.3;"><span id="" style="font-size: 18px;"></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+            </div>
+            <div class="container keyboard_container">
+                <audio data-key="correct_90" src="music/ㄈ 風扇.m4a"></audio>
+                <audio data-key="correct_88" src="music/ㄌ 藍色.m4a"></audio>
+                <audio data-key="correct_67" src="music/ㄏ 花.m4a"></audio>
+                <audio data-key="correct_86" src="music/ㄒ 香蕉.m4a"></audio>
+                <audio data-key="correct_66" src="music/ㄖ 日曆.m4a"></audio>
+                <audio data-key="correct_78" src="music/ㄙ 森林.m4a"></audio>
+                <audio data-key="correct_77" src="music/ㄩ 魚.m4a"></audio>
+                <audio data-key="correct_188" src="music/ㄝ 聖誕節.m4a"></audio>
+                <audio data-key="correct_190" src="music/ㄡ 海鷗.m4a"></audio>
+                <audio data-key="correct_191" src="music/ㄥ 風箏.m4a"></audio>
+                <div class="keyboard_item"   style="flex:2.5;"><span id="" style="font-size: 18px;"></span></div>
+                <div data-key="keyboard_90" class="keyboard_item"   style="flex:1;"><span id="90">ㄈ</span></div>
+                <div data-key="keyboard_88" class="keyboard_item"   style="flex:1;"><span id="88">ㄌ</span></div>
+                <div data-key="keyboard_67" class="keyboard_item"   style="flex:1;"><span id="67">ㄏ</span></div>
+                <div data-key="keyboard_86" class="keyboard_item"   style="flex:1;"><span id="86">ㄒ</span></div>
+                <div data-key="keyboard_66" class="keyboard_item"   style="flex:1;"><span id="66">ㄖ</span></div>
+                <div data-key="keyboard_78" class="keyboard_item"   style="flex:1;"><span id="78">ㄙ</span></div>
+                <div data-key="keyboard_77" class="keyboard_item"   style="flex:1;"><span id="77">ㄩ</span></div>
+                <div data-key="keyboard_188" class="keyboard_item"   style="flex:1;"><span id="188">ㄝ</span></div>
+                <div data-key="keyboard_190" class="keyboard_item"   style="flex:1;"><span id="190">ㄡ</span></div>
+                <div data-key="keyboard_191" class="keyboard_item"   style="flex:1;"><span id="191">ㄥ</span></div>
+                <div class="keyboard_item"   style="flex:1.8;"><span id="" style="font-size: 18px;"></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span id=""></span></div>
+            </div>
+            <div class="container keyboard_container" style="margin-bottom: -5px;">
+                <div class="keyboard_item"   style="flex:1.3;"><span></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:5;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1.8;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+                <div class="keyboard_item"   style="flex:1;"><span ></span></div>
+            </div>
+        </div>
+        <div style="padding: 5px; margin: auto; width: 60%;" class="container"> 
+            <div style="font-size: 25px; width:auto;"> 得分：
+                <span id="score_id">
+                     0 
+                </span>
+            </div>
+            <button id="start_game"> 
+                <p id='btn' class="center" style="width:auto;"> 開始遊戲 </p>
+                <audio data-key="right" src="music/答對音效.wav"></audio>
+                <audio data-key="error" src="music/答錯音效.mp3"></audio>
+                <audio data-key="finish" src="music/歡呼.wav"></audio>
+                <audio data-key="reciprocal_start" src="music/開始.mp3"></audio>
+                <audio data-key="reciprocal_1" src="music/1.mp3"></audio>
+                <audio data-key="reciprocal_2" src="music/2.mp3"></audio>
+                <audio data-key="reciprocal_3" src="music/3.mp3"></audio>
+                <audio data-key="reciprocal_4" src="music/4.mp3"></audio>
+                <audio data-key="reciprocal_5" src="music/5.mp3"></audio>
+                <div id="game_reciprocal"></div>
+            </button>
+            
+            <button id="RandomBtn" style="width:auto;"> 
+                <p class="center" id="Random_text_id"> 注音依序出現 </p>
+            </button>
+            <div style="font-size: 25px; width:auto;"> 遊戲時間：
+                <span id="time_id"> 
+                    0
+                </span>
+            </div>
+        </div>
+        <script src="script.js"></script>
+<!-- 日後備用
+        <div id="wsite-menus">
+            <div style="position:absolute; left:100px; top:100px;">
+                <ul style="display: block;">
+                    <li class="menu_list" style="position:relative; border-top:1px black solid; ">
+                        <a herf="www.html" style="position:relative;"> 
+                            <span> owowowow</span>
+                        </a>
+                    </li>
+                    <li class="menu_list">
+                        owowowo
+                    </li>
+                </ul>
+            </div>
+        </div>
+-->
+    </body>
+</html>

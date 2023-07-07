@@ -1,0 +1,39 @@
+@import url(../../game_view/css/combination_lock.css);
+
+/* For Develop */
+* {
+    /* border: solid 2px black; */
+}
+
+.donut {
+    margin-left: 20px;
+}
+.donut h1 {
+    margin: 0;
+}
+
+.donut h1:nth-child(2){
+    margin: 5px 0px;
+}
+
+img {
+    max-width: 70px;
+    height: auto;
+}
+
+.donuts-img {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.donuts-img img {
+    position: absolute;
+}
+
+.box {
+    margin-left: 20px;
+    width: 550px;
+    height: 320px;
+    background-image: url(assets/images/box.png);
+    background-size: contain;
+}

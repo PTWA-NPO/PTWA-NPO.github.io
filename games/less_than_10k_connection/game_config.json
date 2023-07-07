@@ -1,0 +1,37 @@
+[
+    {
+        "lives": 3
+        , "thousand": [0, 0, 0]
+        , "hundred": [3, 3, 3]
+        , "ten": [5, 5, 5]
+        , "ones": [9, 9, 9]
+    }
+    , {
+        "lives": 3
+        , "thousand": [0, 0, 0]
+        , "hundred": [5, 5, 5]
+        , "ten": [9, 9, 9]
+        , "ones": [9, 9, 9]
+    }
+    , {
+        "lives": 3
+        , "thousand": [3, 3, 3]
+        , "hundred": [5, 5, 5]
+        , "ten": [9, 9, 9]
+        , "ones": [9, 9, 9]
+    }
+    , {
+        "lives": 3
+        , "thousand": [5, 5, 3]
+        , "hundred": [9, 3, 5]
+        , "ten": [9, 9, 9]
+        , "ones": [9, 9, 9]
+    }
+    , {
+        "lives": 3
+        , "thousand": [9, 5, 3]
+        , "hundred": [9, 5, 3]
+        , "ten": [9, 9, 5]
+        , "ones": [9, 5, 8]
+    }
+]

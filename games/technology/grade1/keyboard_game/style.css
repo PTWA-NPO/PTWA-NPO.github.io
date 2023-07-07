@@ -1,0 +1,206 @@
+.header{
+    font-size:16px;
+    letter-spacing:2px; 
+    text-decoration:none; /* 底線 underline：文字下的底線 overline：文字上的線 line-through：穿過文字的線，可以看做是刪除線。*/ 
+    color:#8e8e9c;
+}
+
+.container{
+    display : flex;
+    position: relative;
+    flex-wrap : nowrap; /*不換行*/
+    flex-direction : row; /*橫向排列*/
+    justify-content : center; /*橫向對齊*/
+    align-items : center; /*垂直對齊*/
+}
+
+.head_item{
+    margin:10px;
+    padding:0px;
+}
+
+.center{
+    position: relative;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+#owo{
+    background-color: wheat;
+    float:right;
+    position: relative;
+    right: 7%;
+    width:20%; 
+    height:250px;
+    margin-top: 15px;
+    border: 1px black solid;
+}
+
+#owo p{
+    color:black;
+    font-size: 150px;
+    font-family : "標楷體";
+    font-weight : bold;
+}
+
+#owo .image_2{
+    width:100%;
+    height:100%;
+    display: none;
+}
+
+#keyboard{
+    height: 300px;
+    width: 60%;
+    border: 1px solid black;
+    background-color: #d0d0d1;
+    position: relative;
+    margin: auto; /*水平置中*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+    right: 10%;
+    border-radius: 15px;
+}
+
+.keyboard_container{
+    position: relative;
+    /*border: 5px black solid;*/
+    width: 95%;
+    height: 17%;
+    margin: auto;
+}
+
+.keyboard_item{
+    box-shadow:1px 1px;
+    position: relative;
+    background-color: #37363b;
+    border-radius: 5px;
+    height: 90%;
+    margin-right:5px;
+    transition: all 0.5s; /* 動畫時間 */
+}
+
+.playing{
+    font-weight: bolder;
+    transform: scale(1.2); /* 放大 */
+    border-color: #ffc600; 
+    box-shadow: 0 0 10px #ffc600; /* 陰影 */    
+}
+
+.keyboard_item_1{
+    flex:1;
+    height: 70%;
+}
+
+.keyboard_item span{ /* 可換為 .keyboard_item p*/
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%); /* 往左移 50% 往上移 50%*/
+    color:#eacd11;
+    font-size: 24px;
+    font-family : "標楷體";
+    font-weight : bold;
+    transition: all 2s;
+}
+
+.txt_transition{
+    font-size: 75px !important;
+    color: black !important;
+    -webkit-text-stroke: 1px white;
+    z-index: 9999;
+}
+
+.error_transition{
+    color: red !important;
+}
+
+#start_game{
+    border: 3px black outset;
+    background-color: #97CBFF;
+    border-radius: 20px;
+    width: auto;
+    height: 50px;
+    padding: 20px;
+    margin: 20px auto;
+    transition-property:all;
+    transition-duration:0.25s;
+    transition-timing-function:ease;
+}
+
+#start_game:active{
+    background-color: #2894ff;  
+}
+
+#start_game p{
+    font-weight: bolder;
+    color: black;
+    line-height: 40px;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+
+#RandomBtn{
+    border: 3px black outset;
+    background-color: #97CBFF;
+    border-radius: 20px;
+    width: auto;
+    height: 50px;
+    padding: 20px;
+    margin: 20px auto;
+    transition-property:all;
+    transition-duration:0.25s;
+    transition-timing-function:ease;
+}
+
+#RandomBtn:active{
+    background-color: #2894ff;  
+}
+
+#RandomBtn p{
+    font-weight: bolder;
+    color: black;
+    line-height: 40px;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+#game_reciprocal{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 往左移 50% 往上移 50%*/
+    color: black;
+    -webkit-text-stroke:5px #fff;
+    z-index: 10000;
+    font-size: 300px;
+    letter-spacing: 3px;
+    font-family : "arial";
+    font-weight : bold;
+    text-align: center;
+    position: fixed;
+    padding: auto;
+    margin: auto;
+}
+
+
+
+
+/*
+
+.menu_list{
+    position:relative;
+    padding: 2px;
+    width: 100px;
+    height:30px;
+    font-size:18px;
+    align-items: center;
+    border-left:1px black solid;
+    border-right:1px black solid;
+    border-bottom:1px black solid;
+}
+*/
