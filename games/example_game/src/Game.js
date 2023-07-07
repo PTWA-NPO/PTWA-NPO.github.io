@@ -16,7 +16,7 @@ export class Game extends GameFramework {
     }
 
     startGame(level) {
-        super.startGame(level);
+        if (!super.startGame(level)) return false;
         // create game content
     }
 

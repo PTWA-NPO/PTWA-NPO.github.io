@@ -11,10 +11,10 @@
     background-size: cover;
 }
 
-.topArea :nth-child(2) {
+.topArea :nth-child(1) {
     background-image: url(./assets/images/1.png);
 }
 
-.topArea :nth-child(3) {
+.topArea :nth-child(2) {
     background-image: url(./assets/images/2.png);
 }

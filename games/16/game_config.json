@@ -4,34 +4,29 @@
         , "answer": [6]
         , "width": 3
         , "height": 2
-        , "inputLength": 1
         }
     , { 
         "question": ["這個圖形是（&1）平方公分"]   
         , "answer": [6]
         , "width": 2
         , "height": 4
-        , "inputLength": 1
     }
     , { 
         "question": ["這個圖形是（&1）平方公分"]
         , "answer": [7]
         , "width": 4
         , "height": 3
-        , "inputLength": 1
     }
     , { 
         "question": ["這個圖形是（&1）平方公分"]
         , "answer": [6]
         , "width": 3
         , "height": 4
-        , "inputLength": 1
     }
     , { 
         "question": ["這個圖形是（&1）平方公分"]
         , "answer": [6]
         , "width": 4
         , "height": 2
-        , "inputLength": 1
     }
 ]

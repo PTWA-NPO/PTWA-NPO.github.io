@@ -42,6 +42,7 @@ export class SizeComparison extends GameFramework {
         this.MyAnswer = "";
         this.Answer = "";
         this.createQuestions(this.gameData, level);
+        return true;
     }
     
 

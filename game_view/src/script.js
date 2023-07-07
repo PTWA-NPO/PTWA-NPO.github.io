@@ -3,7 +3,7 @@ import { gameModules } from './module.js';
 import { Handler } from './Handler.js';
 
 async function init() {
-    const allGameData = await gameModules.getJson('../../../game_view/game_config.json');
+    const allGameData = await gameModules.getJson('../../../../public/game_view/game_config.json');
     const gameID = getGameID();
     const gameData = allGameData[gameID];
     const gameGrade = gameData.game_grade;
@@ -33,7 +33,7 @@ function getGameID() {
 
 function createIframeElement(gameName) {
     return $('<iframe></iframe>', {
-        src: `../games/${gameName}/index.html`,
+        src: `../../public/games/${gameName}/index.html`,
         id: gameName,
         scrolling: 'no'
     });
@@ -131,7 +131,7 @@ function setupEventListeners(gameData, levelsArea, optionsArea) {
 
     const previousPageBtn = $('.previousPage');
     previousPageBtn.on('click', () => {
-        window.location.href = `../../games/${gameKind}/grade${gameGrade}/`;
+        window.location.href = `../../../public/games/${gameKind}/grade${gameGrade}/`;
     });
 }
 

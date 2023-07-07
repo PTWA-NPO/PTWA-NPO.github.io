@@ -25,26 +25,26 @@ export class Game extends CombinationLockTemplate {
     }
 
     startGame(level) {
-        super.startGame(level);
+        if (!super.startGame(level)) return false;
         // create game content
         this.answerData = this.gameData[level-1].answer;
         $('.topic img').each((i, img) => {
-            var $img = $(img);
+            const $img = $(img);
 
             $img.animate(this.positions[i], 0);
         });
-        this.topic = $(`.topic :nth-child(${this.level})`);
+        this.topic = $(`.topic :nth-child(${level})`);
         this.generatorTopicArea();
     }
 
     generatorTopicArea() {
         $('.topic').children().hide();
         this.topic.show();
-        this.changeTopic(1);
+        this.changeTopic(this.bottomArea.correntQuestion);
     }
     
     changeTopic(correntQuestionIndex) {
-        const imgWidthMm = this.gameData[this.level-1].imgSize[correntQuestionIndex-1];
+        const imgWidthMm = this.gameData[this.level-1].imgSize[correntQuestionIndex];
         const imgWidthPercent = (imgWidthMm / 150) * (100-6.5); // 6.5 is distance
         this.topic.css("width", imgWidthPercent + "%");
     }

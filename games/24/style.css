@@ -5,6 +5,10 @@
     /* border: solid 2px black; */
 }
 
+.topArea {
+    height: 22em;
+}
+
 .topic {
     width: 100%;
 }

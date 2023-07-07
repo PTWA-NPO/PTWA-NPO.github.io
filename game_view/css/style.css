@@ -96,7 +96,7 @@ button {
 .content {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 0.3rem;
 }
 
 .gameWindow {

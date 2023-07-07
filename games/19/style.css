@@ -5,6 +5,10 @@
     /* border: solid 2px black; */
 }
 
+.topArea {
+    height: 60%;
+}
+
 .topArea h2{
     margin: 0 0 0 10px;
 }

@@ -17,7 +17,7 @@ export class Game extends SizeComparison {
     }
 
     startGame(level) {
-        super.startGame(level);
+        if (!super.startGame(level)) return false;
         // create game content
     }
 }

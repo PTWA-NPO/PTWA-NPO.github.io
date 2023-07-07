@@ -20,9 +20,10 @@ export class Game extends CombinationLockTemplate {
     }
     
     startGame(level) {
-        super.startGame(level);
+        if (!super.startGame(level)) return false;
         // create game content
         this.answerData = this.gameData[level-1].answer;
+        this.questionData = this.gameData[level-1].question;
         this.generatorTopicArea();
     }
 
@@ -31,7 +32,7 @@ export class Game extends CombinationLockTemplate {
         this.coin.empty();
     
         this.answerData.forEach((num, index) => {
-            for(let i = 0; i < Number(num) && index < this.answerData.length-1; i++){
+            for(let i = 0; i < num && index < this.questionData.length-1; i++){
                 const img = $('<img>', {
                     src: `./assets/images/${index}.png`
                 });

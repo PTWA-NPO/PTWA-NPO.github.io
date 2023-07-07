@@ -18,7 +18,7 @@ export class Game extends CombinationLockTemplate {
     }
 
     startGame(level) {
-        super.startGame(level);
+        if (!super.startGame(level)) return false;
         // create game content
         this.answerData = this.gameData[level-1].answer;
         this.generatorTopicArea();
@@ -28,10 +28,6 @@ export class Game extends CombinationLockTemplate {
         //future
         $('.topic').hide();
         $('.topic').eq(this.level - 1).show();
-    }
-
-    changeTopic(correntQuesionIndex) {
-
     }
 
     correctAnswer(){

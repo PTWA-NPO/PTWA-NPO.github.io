@@ -1,0 +1,107 @@
+[
+    {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "4公斤(kg)"
+            , "questionRight": "4002公克(g)"
+            , "answer": "<"},
+            {"questionLeft": "2005公克(g)"
+            , "questionRight": "2公斤(kg)"
+            , "answer": ">"},
+            {"questionLeft": "3公斤(kg)"
+            , "questionRight": "3000公克(g)"
+            , "answer": "="},
+            {"questionLeft": "5010公克(g)"
+            , "questionRight": "5公斤(kg)"
+            , "answer": ">"},
+            {"questionLeft": "8公斤(kg)"
+            , "questionRight": "8006公克(g)"
+            , "answer": "<"}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "1公斤(kg)100公克(g)"
+            , "questionRight": "1010公克(g)"
+            , "answer": ">"},
+            {"questionLeft": "3公斤(kg)100公克(g)"
+            , "questionRight": "3010公克(g)"
+            , "answer": ">"},
+            {"questionLeft": "2公斤(kg)50公克(g)"
+            , "questionRight": "2005公克(g)"
+            , "answer": ">"},
+            {"questionLeft": "4005公克(g)"
+            , "questionRight": "4公斤(kg)500公克(g)"
+            , "answer": "<"},
+            {"questionLeft": "5010公克(g)"
+            , "questionRight": "5公斤(kg)10公克(g)"
+            , "answer": "="}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "2003公克(g)"
+            , "questionRight": "2公斤(kg)300公克(g)"
+            , "answer": "<"},
+            {"questionLeft": "3公斤(kg)300公克(g)"
+            , "questionRight": "3003公克(g)"
+            , "answer": ">"},
+            {"questionLeft": "5公斤(kg)500公克(g)"
+            , "questionRight": "5500公克(g)"
+            , "answer": "="},
+            {"questionLeft": "6005公克(g)"
+            , "questionRight": "6公斤(kg)500公克(g)"
+            , "answer": "<"},
+            {"questionLeft": "8035公克(g)"
+            , "questionRight": "8公斤(kg)350公克(g)"
+            , "answer": "<"}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "6700公克(g)"
+            , "questionRight": "6公斤(kg)700公克(g)"
+            , "answer": "="},
+            {"questionLeft": "2750公克(g)"
+            , "questionRight": "2公斤(kg)75公克"
+            , "answer": ">"},
+            {"questionLeft": "3850公克(g)"
+            , "questionRight": "3公斤(kg)860公克(g)"
+            , "answer": "<"},
+            {"questionLeft": "8880公克(g)"
+            , "questionRight": "8公斤(kg)880公克(g)"
+            , "answer": "="},
+            {"questionLeft": "7公斤(kg)22公克(g)"
+            , "questionRight": "7202公克(g)"
+            , "answer": "<"}
+        ]
+        , "lives": "1"
+    }
+    , {
+        "QuestionAnswer":
+        [
+            {"questionLeft": "3公斤(kg)9公克(g)"
+            , "questionRight": "3090公克(g)"
+            , "answer": "<"},
+            {"questionLeft": "5公斤(kg)9公克(g)"
+            , "questionRight": "5900公克(g)"
+            , "answer": "<"},
+            {"questionLeft": "6公斤(kg)3公克(g)"
+            , "questionRight": "6003公克(g)"
+            , "answer": "="},
+            {"questionLeft": "1公斤(kg)256公克(g)"
+            , "questionRight": "1206公克(g)"
+            , "answer": ">"},
+            {"questionLeft": "4公斤(kg)890公克(g)"
+            , "questionRight": "4089公克(g)"
+            , "answer": ">"}
+        ]
+        , "lives": "1"
+    }
+]
