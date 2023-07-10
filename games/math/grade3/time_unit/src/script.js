@@ -9,6 +9,7 @@ const closeCalculateCanvasBtn = $(`.calculate-canvas .closeCalculateCanvasBtn`);
 const jumpBtn = $('.jumpBtn');
 const answerArea = $(`.game_area .answer`);
 const calculatecanvasBtn = $(`.calculate-canvas-btn`);
+const hintBtn = $('#hintBtn');
 
 levelsArea.on('click', (e) => {
     const level = parseInt(e.target.textContent);
@@ -50,3 +51,8 @@ answerArea.on('click', (e) => {
         game.checkAnswer(answer);
     }
 })
+
+hintBtn.on('click',()=>{
+    if(game.liveState === true) game.showExplaination(game.level);
+});
+

@@ -19,13 +19,10 @@ while (i<Object.keys(gameData.gameData).length){
     level.textContent = i;
     document.querySelector('.levelBtn').appendChild(level);
 }
-AddAnimationGrayRect();
-AddQuestion();
+addQuestion();
 initCalculateCanvas();
 //init the calculate canvas
-const canvas = $('#calculate-section')[0];
-canvas.width = 800;
-canvas.height = 600;
+setupCanvas();
 
 class Game {
     gameRule = $('.gameRule');
@@ -40,6 +37,7 @@ class Game {
         this.gameState = GAME_FILE;
         this.level = 0;
         this.lives = 0;
+        this.liveState = false;
         this.record = {'question': []
                       , 'answer': []
                       , 'result': []
@@ -57,7 +55,7 @@ class Game {
         if (this.level===0){
             this.levelBtn.children().eq(this.level).addClass('active');
             this.level = 1;
-            UpdateAnswer(level);
+            updateAnswer(level);
         }
         else {
             this.changeLevel(level);
@@ -132,13 +130,14 @@ class Game {
         this.level = level;
         this.resetGame();
         this.LevelTranslationControl(this.level);
-        UpdateAnswer(this.level);
+        updateAnswer(this.level);
     }
     
     resetGame(){
         // this.gameState = GAME_FILE;
         $('#nextBtn').removeClass('jumpBtn');
         this.gameState = GAME_ALIVE;
+        this.liveState = false;
         firework_sound.pause();
         fireworkContainer.css('display', 'none');
         this.winLevelArr.forEach((level)=>{
@@ -192,11 +191,6 @@ class Game {
         URL.revokeObjectURL(url);
     }
 
-    // toggleHint(){
-    //     if (this.gameState !== GAME_ALIVE) return;    
-    //     $('.overlay').toggle();
-    // }
-
     toggleRightAns(){
         $('.RightAnsOverlay').toggle();
     }
@@ -209,7 +203,7 @@ class Game {
         const count = lives - $('.lives').children().length;
         if (count === 0 || lives < 0) return;
         if (count < 0) {
-            if(lives===0) this.showExplaination(level);
+            if(lives===0) this.showExplaination(level),this.liveState = true;
             $('.lives > :last-child').remove();
             return
         }
@@ -229,12 +223,10 @@ class Game {
         let question = gameData.gameData[level].question;
         let answer = gameData.gameData[level].options[gameData.gameData[level].answer];
     
-        let hours = 0;
-        let minutes = 0;
-        let seconds = 0;
         //作法：用一個4*4表格來顯示直式
+        //表格的初始狀態有第一個直式的橫線和乘號（已寫在HTML）
 
-        // clear table 
+        // 初始化 清空表格
         $('#conversion-table tr:nth-child(1) td:nth-child(2)').empty();
         $('#conversion-table tr:nth-child(2) td:nth-child(3)').empty();
         $('#conversion-table tr:nth-child(2) td:nth-child(4)').empty();
@@ -247,9 +239,7 @@ class Game {
             if(question.includes("秒")){ 
                 //題目格式是x分鐘y秒
                 let minutes = parseInt(question.split("分鐘")[0]);
-                console.log(minutes);
                 let seconds = parseInt(question.split("分鐘")[1].split("秒")[0]);
-                console.log(seconds);
                 $('#conversion-table tr:nth-child(1) td:nth-child(1)').text('60');
                 $('#conversion-table tr:nth-child(2) td:nth-child(2)').text(minutes);
                 $('#conversion-table tr:nth-child(4) td:nth-child(1)').text(minutes * 60);
@@ -297,102 +287,29 @@ class Game {
     }
 
     LevelTranslationControl(DestinationLevel){
-        const DestinationLevel_X = (DestinationLevel-1) * 800;
-        $('.question-container, .fill_blank_top, .fill_blank_down').each(function () {
+        const DestinationLevel_Y = (DestinationLevel-1) * 720;
+        $('.question-container').each(function () {
             $(this).css({
                 'transition': 'transform 1.5s ease',
-                'transform': 'translateX(' + -DestinationLevel_X + 'px)'
+                'transform': 'translateY(' + -DestinationLevel_Y + 'px)'
             });
         });
     }
-    // createCanvasElement(level){
-    //     $('.calculate-canvas').toggle();
-    //     $('.Calculus-section-question').remove();
-    //     $('#calculate-section').addClass('pen-cursor');
-    //     const QuestionText = gameData.gameData[level].question; 
-    //     const QuestionElement = $('<p>').attr('class','Calculus-section-question').text('題目：' + QuestionText);
-    //     $('.calculate-canvas').append(QuestionElement);
-    // }
+
     showCanvas(level){
         $('.calculate-canvas').toggle();
-        $('#calculate-section').addClass('pen-cursor');
-        $('.Calculus-section-question').remove();
+        $('#calculate-section').css({'cursor': "url('assets/images/pen_cursor.png') , auto"});
+        $('.calculus-section-question').remove();
         const QuestionText = gameData.gameData[level].question; 
-        const QuestionElement = $('<p>').attr('class','Calculus-section-question').text('題目：' + QuestionText);
+        const QuestionElement = $('<p>').attr('class','calculus-section-question').text('題目：' + QuestionText).css({
+            'position': 'absolute',
+            'top': '30px',
+            'left': '50px',
+            'font-size': '30px'
+        });
+        
         $('.calculate-canvas').append(QuestionElement);
 
-    }
-    setupCanvas(){
-        //設定按鈕控制
-        $('.startWriting').on('click',()=>{
-            isEraserActive = false;
-            $('.showmode').text("正在書寫模式");
-            $('#calculate-section').removeClass('eraser-cursor');
-            $('#calculate-section').addClass('pen-cursor');
-        });
-    
-        $('.startErasing').on('click',()=>{
-            isEraserActive = true;
-            $('.showmode').text("正在擦布模式");
-            $('#calculate-section').removeClass('pen-cursor');
-            $('#calculate-section').addClass('eraser-cursor');
-        });
-    
-        const canvas = $('#calculate-section')[0];
-        const ctx = canvas.getContext('2d');
-        ctx.strokeStyle = 'black';
-    
-        let x1 = 0;
-        let y1 = 0;
-        let x2 = 0;
-        let y2 = 0;
-    
-        const hasTouchEvent = 'ontouchstart' in window ? true : false;
-        const downEvent = hasTouchEvent ? 'ontouchstart' : 'mousedown';
-        const moveEvent = hasTouchEvent ? 'ontouchmove' : 'mousemove';
-        const upEvent = hasTouchEvent ? 'touchend' : 'mouseup';
-        let isMouseActive = false;
-        let isEraserActive = false;
-    
-        $('.BlackColor').on('click',()=>{ctx.strokeStyle = 'black';});
-        $('.BlueColor').on('click',()=>{ctx.strokeStyle = 'blue';});
-        $('.RedColor').on('click',()=>{ctx.strokeStyle = 'red';});
-    
-        $('.clearAll').on('click',()=>{
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-        });
-    
-        $(canvas).on(downEvent, function(e){
-            isMouseActive = true;
-            x1 = e.offsetX;
-            y1 = e.offsetY+16;
-    
-            ctx.lineWidth = 3;
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-        });
-
-        $(canvas).on(moveEvent, function(e){
-            if(!isMouseActive){
-                return;
-            }
-            x2 = e.offsetX;
-            y2 = e.offsetY+32;
-            if(isEraserActive){
-                ctx.clearRect(x2-10,y2-10,20,20);
-            }else{
-                ctx.beginPath();
-                ctx.moveTo(x1, y1);
-                ctx.lineTo(x2, y2);
-                ctx.stroke();    
-                x1 = x2;
-                y1 = y2;
-            }
-        });
-    
-        canvas.addEventListener(upEvent, function(e){
-            isMouseActive = false;
-        });
     }
 
     toggleCalculateCanvas(){
@@ -442,37 +359,13 @@ function removeFirework() {
     }
 }
 
-function AddAnimationGrayRect(){
-    const interval = 35;
-    const totalWidth = 4800;
-    const numGrayRects = totalWidth / interval;
-    for(let i = 0; i < numGrayRects; i++){
-        const grayrect = SetGrayRectAttribute(interval);
-        $('.fill_blank_down,.fill_blank_top').append(grayrect);
-    }
-}
 
-function SetGrayRectAttribute(interval){
-    const grayRectWidth = 10;
-    const grayRectHeight = 20;
-    const grayrectElement = $('<div>');
-    grayrectElement.addClass('gray-rect');
-    grayrectElement.css({
-        width: grayRectWidth + 'px',
-        height: grayRectHeight + 'px',
-        backgroundColor: '#808080',
-        marginRight: interval - grayRectWidth + 'px',
-    });
-    return grayrectElement;
-}
-
-function AddQuestion(){
+function addQuestion(){
     const questionkeys = Object.keys(gameData.gameData);
     questionkeys.forEach((key,index)=>{
         const question = gameData.gameData[key].question;
         const questionElement = $('<div>',{
-            css: {left: (index * 800 + 400) + 'px',position: 'absolute'},
-            // css:{'transform': 'translateX(' + (index * 800 + 400) + 'px)'},
+            css: {top: (index * 720 + 180) + 'px',position: 'absolute'},
             text:question,
         });
         questionElement.addClass('question');
@@ -480,44 +373,255 @@ function AddQuestion(){
     });
 }
 
-function UpdateAnswer(level){
-    //const OptionsNum = Object.keys(gameData.gameData[level].options).length;
-    //const OptionsKeys = Object.keys(gameData.gameData[level].options);
-    const OptionsValues = Object.values(gameData.gameData[level].options);
-    $('.a').text(OptionsValues[0]);
-    $('.b').text(OptionsValues[1]);
-    $('.c').text(OptionsValues[2]);
-    // for(let i=0; i < OptionsNum; i++){
-    //     const className = OptionsKeys[i];
-    //     $(className).empty();
-    //     $(className).text(OptionsValues[i]);
-    // }
+function updateAnswer(level){
+    const optionValues = Object.values(gameData.gameData[level].options);
+    const optionNames = ['a','b','c'];
+    optionNames.forEach((optionName,index) => {
+        $(`.${optionName}`).text(optionValues[index]);
+    });
 }
 
 function initCalculateCanvas(){
+    
+    //初始化畫布
+    const calculateCanvas = $('.calculate-canvas');
+    const calculateCanvasBtn = $('.calculate-canvas-btn');
+    const calculateCanvasImg = $('.calculate-canvas-btn img');
+    const calculateSection = $('#calculate-section');
+    calculateCanvas.css({
+        'position': 'relative',
+        'display': 'none',
+        'top': '0',
+        'left': '0',
+        'width': '100%',
+        'height': '100%',
+        'z-index': '9999',
+    });
+    calculateCanvasBtn.css({
+        'width': 'auto',
+        'height': '25px',
+        'padding-left': '15px',
+        'padding-right': '15px',
+        'padding-top': '5px',
+        'padding-bottom': '5px',
+        'border': 'solid 2px #71a2ab',
+        'background-color': '#fff',
+        'position': 'absolute',
+        'top': '1%',
+        'left': '2%',
+        'border-radius': '5px',
+        'z-index': '100',
+        'margin': '0',
+        'cursor': 'pointer',
+    });
+    calculateCanvasImg.css({
+        'width': '20px',
+        'height': '20px',
+        'padding-right': '10px',
+        'text-align': 'center',
+        'margin': 'auto',
+    });
+    calculateSection.css({
+        'display': 'flex',
+        'justify-content': 'space-evenly',
+        'position': 'absolute',
+        'top': '50%',
+        'left': '50%',
+        'transform': 'translate(-50%, -50%)',
+        'background-color': 'rgba(255, 255, 255, 1)',
+        'border': '5px solid #b3e6e5',
+        'border-radius': '6px',
+        'width': '100%',
+        'height': '100%',
+        'overflow': 'hidden',
+    });
+
+    //創造畫布中元素 並設定CSS屬性
     const penElement = $('<img>').attr({
-        'class': 'startWriting animate-pen',
+        'class': 'startWriting',
             'src' : 'assets/images/pen.png',
             'alt' : 'startWriting'
+    }).css({
+        'position': 'absolute',
+        'top': '10px',
+        'left': '60px',
+        'height': '30px',
+        'width': '30px',
+        'cursor': 'pointer'
     });
+
     const eraserElement = $('<img>').attr({
         'class': 'startErasing animate-eraser',
             'src' : 'assets/images/eraser.png',
             'alt' : 'startErasing'
+    }).css({
+        'position': 'absolute',
+        'top': '10px',
+        'left': '110px',
+        'height': '30px',
+        'width': '30px',
+        'cursor': 'pointer',
     });
+
+    const clearallElement = $('<button>').attr({'class': 'clearAll'}).text("清空畫布").css({
+        'position': 'absolute',
+        'top': '12px',
+        'left': '170px',
+        'border-radius': '5px',
+        'cursor': 'pointer',
+        'letter-spacing': '1px',
+        'padding-left': '10px',
+        'padding-right': '10px',
+        'border': 'solid 2px #02bbdc'
+    });
+
     const modeElement = $('<p>').attr({'class': 'showmode'}).text("正在書寫模式");
-    const clearallElement = $('<button>').attr({'class': 'clearAll animate-clearAllBtn'}).text("清空畫布");
-    const BlackColorElement = $('<div>').attr('class','BlackColor');
-    const BlueColorElement = $('<div>').attr('class','BlueColor');
-    const RedColorElement = $('<div>').attr('class','RedColor');
-    const FormHintElement = $('<p>').attr('class','FormHint').text("公式：1小時=60分鐘/1分鐘=60秒");
+    modeElement.css({
+        'font-size': '20px',
+        'font-weight': '500',
+        'position': 'absolute',
+        'top': '10px',
+        'left': '270px',
+        'margin': '0',
+    });
+
+    const blackColorElement = $('<div>').attr('class','BlackColor');
+    const blueColorElement = $('<div>').attr('class','BlueColor');
+    const redColorElement = $('<div>').attr('class','RedColor');
+    [blackColorElement,blueColorElement,redColorElement].forEach(function(element){
+        element.css({
+            'position': 'absolute',
+            'top': '10px',
+            'left': '410px',
+            'background-color': '#000',
+            'width': '25px',
+            'height': '25px',
+            'border-radius': '100%',
+            'cursor': 'pointer'
+        })
+    });
+    blackColorElement.css({
+        'background-color': 'red',
+        'left': '490px',
+    });
+    blueColorElement.css({
+        'background-color': 'blue',
+        'left': '450px',
+    });
+
+    const formHintElement = $('<p>').attr('class','formHint').text("公式：1小時=60分鐘/1分鐘=60秒");
+    formHintElement.css({
+        'position': 'absolute',
+        'top': '30px',
+        'left': '300px',
+        'font-size': '30px',
+    });
+
+
+    //加入:hover的功能
+    [penElement,eraserElement,clearallElement,blackColorElement,blueColorElement,redColorElement,calculateCanvasBtn].forEach(function(element){
+        element.css({
+            'transition': 'transform 0.3s ease',
+        }).hover(
+            function() {
+                $(this).css('transform', 'translateY(-5px)');
+            }, 
+            function() {
+                $(this).css('transform', '');
+            }
+        )
+    });
+
+    //將元素加進HTML中
     $('.calculate-canvas').append(penElement);
     $('.calculate-canvas').append(eraserElement);
     $('.calculate-canvas').append(clearallElement);
     $('.calculate-canvas').append(modeElement);
-    $('.calculate-canvas').append(BlackColorElement);
-    $('.calculate-canvas').append(BlueColorElement);
-    $('.calculate-canvas').append(RedColorElement);
-    $('.calculate-canvas').append(FormHintElement);
+    $('.calculate-canvas').append(blackColorElement);
+    $('.calculate-canvas').append(blueColorElement);
+    $('.calculate-canvas').append(redColorElement);
+    $('.calculate-canvas').append(formHintElement);
 }
 
+function setupCanvas(){
+    
+    const canvas = $('#calculate-section')[0];
+    const ctx = canvas.getContext('2d');
+    canvas.width = 800;
+    canvas.height = 600;
+    ctx.strokeStyle = 'black';
+
+    let x1 = 0;
+    let y1 = 0;
+    let x2 = 0;
+    let y2 = 0;
+
+    //判斷是滑鼠還是觸控
+    const hasTouchEvent = 'ontouchstart' in window ? true : false;
+    const downEvent = hasTouchEvent ? 'ontouchstart' : 'mousedown';
+    const moveEvent = hasTouchEvent ? 'ontouchmove' : 'mousemove';
+    const upEvent = hasTouchEvent ? 'touchend' : 'mouseup';
+    let isMouseActive = false;
+    let isEraserActive = false;
+
+    $('.calculate-canvas').on('click', '.startWriting', () => {
+        isEraserActive = false;
+        $('.showmode').text("正在書寫模式");
+        $('#calculate-section').css({'cursor': "url('assets/images/pen_cursor.png') , auto"});
+    });
+    
+    $('.calculate-canvas').on('click', '.startErasing', () => {
+        isEraserActive = true;
+        $('.showmode').text("正在擦布模式");
+        $('#calculate-section').css({'cursor': "url('assets/images/eraser_cursor.png') , auto"});
+    });
+    
+    $('.calculate-canvas').on('click', '.BlackColor', () => {
+        ctx.strokeStyle = 'black';
+    });
+    
+    $('.calculate-canvas').on('click', '.BlueColor', () => {
+        ctx.strokeStyle = 'blue';
+    });
+    
+    $('.calculate-canvas').on('click', '.RedColor', () => {
+        ctx.strokeStyle = 'red';
+    });
+    
+    $('.calculate-canvas').on('click', '.clearAll', () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+    
+
+    $(canvas).on(downEvent, function(e){
+        isMouseActive = true;
+        x1 = e.offsetX;
+        y1 = e.offsetY+32;
+
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+    });
+
+    $(canvas).on(moveEvent, function(e){
+        if(!isMouseActive){
+            return;
+        }
+        x2 = e.offsetX;
+        y2 = e.offsetY+32;
+        if(isEraserActive){
+            ctx.clearRect(x2-10,y2-10,20,20);
+        }else{
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();    
+            x1 = x2;
+            y1 = y2;
+        }
+    });
+
+    canvas.addEventListener(upEvent, function(e){
+        isMouseActive = false;
+    });
+}
