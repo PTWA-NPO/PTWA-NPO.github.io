@@ -352,12 +352,12 @@ button {
 }
 
 
-.FormHint{
+/* .FormHint{
     position: absolute;
     top: 30px;
     left: 300px;
     font-size: 30px;
-}
+} */
 
 .Calculus-section-question{
     position: absolute;
@@ -367,24 +367,13 @@ button {
 }
 
 
-.startErasing,
+/* .startErasing,
 .startWriting{
     cursor: pointer;
-}
+} */
 
-.calculate-canvas .clearAll{
-    position:absolute;
-    top: 12px;
-    left: 170px;
-    border-radius: 5px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: solid 2px #02bbdc;
-}
 
-.calculate-canvas .showmode{
+/* .calculate-canvas .showmode{
     font-size: 20px;
     font-weight: 500;
     position: absolute;
@@ -392,65 +381,19 @@ button {
     left:270px;
     margin: 0;
     
+} */
+
+/* .animate-pen,
+.animate-eraser,
+.animate-clearAllBtn{
+    transition: transform 0.3s ease;
 }
 
-.animate-pen:hover {
-    animation-name: pen-hover;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-}
-  
-.animate-eraser:hover {
-animation-name: eraser-hover;
-animation-duration: 0.5s;
-animation-timing-function: ease-out;
-animation-fill-mode: forwards;
-}
-
+.animate-pen:hover,
+.animate-eraser:hover,
 .animate-clearAllBtn:hover{
-    animation-name: clearAllBtn-hover;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-}
-  
-@keyframes pen-hover {
-0% {
-    transform: scale(1);
-}
-50% {
-    transform: scale(1.2);
-}
-100% {
-    transform: scale(1);
-}
-}
-
-@keyframes eraser-hover {
-0% {
-    transform: scale(1);
-}
-50% {
-    transform: scale(1.2);
-}
-100% {
-    transform: scale(1);
-}
-}
-
-@keyframes clearAllBtn-hover {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
+    transform: translateY(-5px);
+} */
 
 
 .eraser-cursor{
@@ -463,7 +406,7 @@ animation-fill-mode: forwards;
     /*書寫模式時 滑鼠造型換成筆*/
 }
 
-.startWriting{
+/* .startWriting{
     position: absolute;
     top:10px;
     left:60px;
@@ -477,9 +420,9 @@ animation-fill-mode: forwards;
     left:110px;
     height: 30px;
     width: 30px;
-}
+} */
 
-.BlackColor,
+/* .BlackColor,
 .RedColor,
 .BlueColor{
     position:absolute;
@@ -490,21 +433,21 @@ animation-fill-mode: forwards;
     height: 25px;
     border-radius: 100%;
     cursor: pointer;
-}
-.RedColor{
+} */
+/* .RedColor{
     background-color: red;
     left: 490px;
 }
 .BlueColor{
     background-color: blue;
     left: 450px;
-}
-.BlackColor:hover,
+} */
+/* .BlackColor:hover,
 .RedColor:hover,
 .BlueColor:hover{
     transform: translateY(-5px);
     transition: 0.3s;
-}
+} */
 
 
 

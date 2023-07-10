@@ -226,12 +226,10 @@ class Game {
         let question = gameData.gameData[level].question;
         let answer = gameData.gameData[level].options[gameData.gameData[level].answer];
     
-        let hours = 0;
-        let minutes = 0;
-        let seconds = 0;
         //作法：用一個4*4表格來顯示直式
+        //表格的初始狀態有第一個直式的橫線和乘號（已寫在HTML）
 
-        // clear table 
+        // 初始化 清空表格
         $('#conversion-table tr:nth-child(1) td:nth-child(2)').empty();
         $('#conversion-table tr:nth-child(2) td:nth-child(3)').empty();
         $('#conversion-table tr:nth-child(2) td:nth-child(4)').empty();
@@ -381,30 +379,111 @@ function updateAnswer(level){
 }
 
 function initCalculateCanvas(){
+    
+    //創造元素 並設定CSS屬性
     const penElement = $('<img>').attr({
-        'class': 'startWriting animate-pen',
+        'class': 'startWriting',
             'src' : 'assets/images/pen.png',
             'alt' : 'startWriting'
+    }).css({
+        'position': 'absolute',
+        'top': '10px',
+        'left': '60px',
+        'height': '30px',
+        'width': '30px',
+        'cursor': 'pointer'
     });
+
     const eraserElement = $('<img>').attr({
         'class': 'startErasing animate-eraser',
             'src' : 'assets/images/eraser.png',
             'alt' : 'startErasing'
+    }).css({
+        'position': 'absolute',
+        'top': '10px',
+        'left': '110px',
+        'height': '30px',
+        'width': '30px',
+        'cursor': 'pointer',
     });
+
+    const clearallElement = $('<button>').attr({'class': 'clearAll'}).text("清空畫布").css({
+        'position': 'absolute',
+        'top': '12px',
+        'left': '170px',
+        'border-radius': '5px',
+        'cursor': 'pointer',
+        'letter-spacing': '1px',
+        'padding-left': '10px',
+        'padding-right': '10px',
+        'border': 'solid 2px #02bbdc'
+    });
+
     const modeElement = $('<p>').attr({'class': 'showmode'}).text("正在書寫模式");
-    const clearallElement = $('<button>').attr({'class': 'clearAll animate-clearAllBtn'}).text("清空畫布");
-    const BlackColorElement = $('<div>').attr('class','BlackColor');
-    const BlueColorElement = $('<div>').attr('class','BlueColor');
-    const RedColorElement = $('<div>').attr('class','RedColor');
-    const FormHintElement = $('<p>').attr('class','FormHint').text("公式：1小時=60分鐘/1分鐘=60秒");
+    modeElement.css({
+        'font-size': '20px',
+        'font-weight': '500',
+        'position': 'absolute',
+        'top': '10px',
+        'left': '270px',
+        'margin': '0',
+    });
+
+    const blackColorElement = $('<div>').attr('class','BlackColor');
+    const blueColorElement = $('<div>').attr('class','BlueColor');
+    const redColorElement = $('<div>').attr('class','RedColor');
+    [blackColorElement,blueColorElement,redColorElement].forEach(function(element){
+        element.css({
+            'position': 'absolute',
+            'top': '10px',
+            'left': '410px',
+            'background-color': '#000',
+            'width': '25px',
+            'height': '25px',
+            'border-radius': '100%',
+            'cursor': 'pointer'
+        })
+    });
+    blackColorElement.css({
+        'background-color': 'red',
+        'left': '490px',
+    });
+    blueColorElement.css({
+        'background-color': 'blue',
+        'left': '450px',
+    });
+
+    const formHintElement = $('<p>').attr('class','formHint').text("公式：1小時=60分鐘/1分鐘=60秒");
+    formHintElement.css({
+        'position': 'absolute',
+        'top': '30px',
+        'left': '300px',
+        'font-size': '30px',
+    });
+
+    //加入:hover的功能
+    [penElement,eraserElement,clearallElement,blackColorElement,blueColorElement,redColorElement].forEach(function(element){
+        element.css({
+            'transition': 'transform 0.3s ease',
+        }).hover(
+            function() {
+                $(this).css('transform', 'translateY(-5px)');
+            }, 
+            function() {
+                $(this).css('transform', '');
+            }
+        )
+    });
+    
+    //將元素加進HTML中
     $('.calculate-canvas').append(penElement);
     $('.calculate-canvas').append(eraserElement);
     $('.calculate-canvas').append(clearallElement);
     $('.calculate-canvas').append(modeElement);
-    $('.calculate-canvas').append(BlackColorElement);
-    $('.calculate-canvas').append(BlueColorElement);
-    $('.calculate-canvas').append(RedColorElement);
-    $('.calculate-canvas').append(FormHintElement);
+    $('.calculate-canvas').append(blackColorElement);
+    $('.calculate-canvas').append(blueColorElement);
+    $('.calculate-canvas').append(redColorElement);
+    $('.calculate-canvas').append(formHintElement);
 }
 
 function setupCanvas(){
