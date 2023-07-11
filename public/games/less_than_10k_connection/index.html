@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../libs/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div class="overlay">
+        <div class="hintContainer">
+            <h1 >提示：</h1>
+            <div class="leftArea"></div>
+            <div class="centerArea"></div>
+            <div class="rightArea"></div>
+        </div>
+    </div>
+    <div class="gameArea">
+        <svg class="drawingArea">
+            <line class="line" x1="0" y1="0" x2="0" y2="0" />
+        </svg>
+        <!-- 遊戲內容 -->
+        <div class="leftArea">
+            <div class="questionArea">
+                <div class="contentArea"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="questionArea">
+                <div class="contentArea"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="questionArea">
+                <div class="contentArea"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div class="centerArea">
+            <div class="questionArea answerArea">
+                <div class="dot"></div>
+                <div class="contentArea">
+                    <h2 class="thousand">
+                    </h2>
+                    <h2 class="hundred">
+                    </h2>
+                    <h2 class="ten">
+                    </h2>
+                    <h2 class="ones">
+                    </h2>
+                </div>
+                <div class="dot"></div>
+            </div>
+            <div class="questionArea answerArea">
+                <div class="dot"></div>
+                <div class="contentArea">
+                    <h2 class="thousand">
+                    </h2>
+                    <h2 class="hundred">
+                    </h2>
+                    <h2 class="ten">
+                    </h2>
+                    <h2 class="ones">
+                    </h2>
+                </div>
+                <div class="dot"></div>
+            </div>
+            <div class="questionArea answerArea">
+                <div class="dot"></div>
+                <div class="contentArea">
+                    <h2 class="thousand">
+                    </h2>
+                    <h2 class="hundred">
+                    </h2>
+                    <h2 class="ten">
+                    </h2>
+                    <h2 class="ones">
+                    </h2>
+                </div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div class="rightArea">
+            <div class="answerArea">
+                <div class="dot"></div>
+                <div class="contentArea">
+                    <div class="thousand">
+                        <h2 class="chinese">千</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="hundred">
+                        <h2 class="chinese">百</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="ten">
+                        <h2 class="chinese">十</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="ones">
+                        <h2 class="chinese">個</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="answerArea">
+                <div class="dot"></div>
+                <div class="contentArea">
+                    <div class="thousand">
+                        <h2 class="chinese">千</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="hundred">
+                        <h2 class="chinese">百</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="ten">
+                        <h2 class="chinese">十</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="ones">
+                        <h2 class="chinese">個</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="answerArea">
+                <div class="dot"></div>
+                <div class="contentArea">
+                    <div class="thousand">
+                        <h2 class="chinese">千</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="hundred">
+                        <h2 class="chinese">百</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="ten">
+                        <h2 class="chinese">十</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                    <div class="ones">
+                        <h2 class="chinese">個</h2>
+                        <h2 class="number"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./src/Game.js" type="module"></script>
+</body>
+</html>

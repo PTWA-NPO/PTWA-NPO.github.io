@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>理解並運用適當的時間單位</title>
+    <script src="../../../../libs/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="audio">
+        <audio id="correct" src="../../../../assets/sounds/game_sounds/correct_sound_effect.mp3"></audio>
+        <audio id="wrong" src="../../../../assets/sounds/game_sounds/wrong_sound_effect.mp3"></audio>
+        <audio id="win" src="../../../../assets/sounds/game_sounds/applause_fireworks.mp3" duration="3"></audio>
+    </div>
+    <div class="gameWindow">
+        <div class="gameBtn levelBtn">            
+            <button class="level">1</button>
+        </div>
+        <div class="myCanvas">
+            <div class="gameRule">
+                <h1 id="start">遊戲玩法：
+                    <span id="version">V0.1.2</span>
+                </h1>
+                <div class="context">
+                    <h1>根據題目選擇對應的答案</h1>
+                    <h1>正確即可過關</h1>
+                    <h1>點擊💾可下載遊戲紀錄</h1>
+                </div>
+                <h1 id="end">準備好了嗎？點擊遊戲開始！</h1>
+            </div>
+            <div class="topic">
+                <span id="first-portion"></span>
+                <span id="number" class="redWord"></span>
+            </div>
+            <div class="lives"></div>
+            <div class="game_area">
+                <div class="question">
+                    <img src="./assets/images/1.png" alt="題目一" class="question-img" style="display: none;">
+                    <img src="./assets/images/2.png" alt="題目二" class="question-img" style="display: none;">
+                    <img src="./assets/images/3.png" alt="題目三" class="question-img" style="display: none;">
+                    <img src="./assets/images/4.png" alt="題目四" class="question-img" style="display: none;">
+                    <img src="./assets/images/5.png" alt="題目五" class="question-img" style="display: none;">
+                </div>
+                <div class="answer">
+                    <div class="day">日</div>
+                    <div class="hour">小時</div>
+                    <div class="minute">分鐘</div>
+                    <div class="second">秒鐘</div>
+                </div>
+            </div>
+            <div class="result">
+                <h1 id="bingo">Ｏ</h1>
+                <h1 id="dada">Ｘ</h1>
+            </div>
+            <div id="firework-container"></div>
+        </div>
+        <div class="gameBtn optionsBtn">
+            <button id="lastBtn">上一關</button>
+            <button id="startBtn">遊戲開始</button>
+            <button id="nextBtn">下一關</button>
+            <button id="recordBtn">💾</button>
+        </div>
+    </div>
+    <div class="script">
+        <script src="src/script.js" type="module"></script>
+    </div>
+</body>
+</html>

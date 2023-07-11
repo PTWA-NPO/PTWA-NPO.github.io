@@ -1,0 +1,162 @@
+[
+    {
+        "game_name": "fractional_connection"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 9
+        , "game_level": 5
+        , "game_rule": ["根據題目連線對應的答案", "正確即可過關", "點擊💾可下載遊戲紀錄", "錯誤三次可點擊提示"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "hintBtn", "recordBtn"]
+    }
+    , {
+        "game_name": "clock_connection"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "next"
+        , "unit": 4
+        , "game_level": 6
+        , "game_rule": ["根據題目連線對應的答案", "正確即可過關", "點擊💾可下載遊戲紀錄", "錯誤兩次可點擊提示"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "hintBtn", "recordBtn"]
+    }
+    , {
+        "game_name": "less_than_10k_connection"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 1
+        , "game_level": 5
+        , "game_rule": ["根據題目連線對應的答案", "正確即可過關", "點擊💾可下載遊戲紀錄", "錯誤三次可點擊提示"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "hintBtn", "recordBtn"]
+    }
+    , {
+        "game_name": "mouse_click"
+        , "game_kind": "technology"
+        , "game_grade": 1
+        , "semester": "all"
+        , "unit": 0
+        , "game_level": 2
+        , "game_rule": ["根據題目用滑鼠點擊遊戲", "獲得更高的分數", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn"]
+    }
+    , {
+        "game_name": "conversion_of_money"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 1
+        , "game_level": 5
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "16"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 6
+        , "game_level": 5
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "17"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 6
+        , "game_level": 2
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "18"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 6
+        , "game_level": 1
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "19"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 8
+        , "game_level": 5
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "centimeter_millimeter_ratio_size"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "next"
+        , "unit": 7
+        , "game_level": 5
+        , "game_rule": ["根據題目拖移正確符號進入答案框內", "正確即可過關", "點擊💾可下載遊戲紀錄", "困惑時可點擊提示"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "hintBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "21"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 9
+        , "game_level": 1
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "22"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "next"
+        , "unit": 5
+        , "game_level": 3
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "23"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "next"
+        , "unit": 7
+        , "game_level": 5
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "24"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "next"
+        , "unit": 7
+        , "game_level": 5
+        , "game_rule": ["根據題目填入答案", "全部填寫完畢後點擊送出答案", "正確即可通關", "點擊💾可下載遊戲紀錄"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "Liter_milliliter_board_size"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 3
+        , "game_level": 5
+        , "game_rule": ["根據題目拖移正確符號進入答案框內", "正確即可過關", "點擊💾可下載遊戲紀錄", "困惑時可點擊提示"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "hintBtn", "recordBtn", "submitBtn"]
+    }
+    , {
+        "game_name": "kg_grams_board_size"
+        , "game_kind": "math"
+        , "game_grade": 3
+        , "semester": "last"
+        , "unit": 8
+        , "game_level": 5
+        , "game_rule": ["根據題目拖移正確符號進入答案框內", "正確即可過關", "點擊💾可下載遊戲紀錄", "困惑時可點擊提示"]
+        , "game_option": ["lastBtn", "startBtn", "nextBtn", "hintBtn", "recordBtn", "submitBtn"]
+    }
+] 

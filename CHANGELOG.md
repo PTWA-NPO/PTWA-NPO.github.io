@@ -2,6 +2,18 @@
 
 The format is modified from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023.07.06
+##### [2.27.0] - Educational Games
+**Added**
+- 新增 stage branch
+- 更新檔案結構，新增 libs 和 publick
+**Changed**
+- 更新密碼鎖模板，答案顯示方式，從換頁變成滾軸
+- 更新密碼鎖模板，把密碼鎖遷入在答案裡
+- 更新密碼鎖模板，把上下箭頭改成加減符號
+- 更新毫升、公升比大小，換成模板，增加題庫
+- 更新公斤、公克比大小，換成模板，增加題庫
+
 ### 2023.06.28
 ##### [2.27.0] - Educational Games
 **Added**

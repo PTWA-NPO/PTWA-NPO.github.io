@@ -1,0 +1,24 @@
+@import url(../../game_view/css/combination_lock.css);
+
+/* For Develop */
+* {
+    /* border: solid 2px black; */
+}
+
+.topArea {
+    height: 22em;
+}
+
+.topic {
+    width: 100%;
+}
+
+.topic img{
+    position: absolute;
+}
+
+.ruler {
+    position: absolute;
+    margin-top: 30%;
+    width: 100%;
+}

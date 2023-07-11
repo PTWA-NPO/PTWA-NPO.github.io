@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PTW教案</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="popper.js"></script>
+    <script src="../../../../libs/jquery/dist/jquery.min.js"></script>
+</head>
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .timer{
+        font-size: 2em;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <canvas id="cvs" class="center" width="800" height="600" style="border: 1px solid #000"></canvas>
+        <div class="row">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-lg btn-primary" id="bt-0" disabled>0</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-1"disabled >1</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-2"disabled>2</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-3"disabled>3</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-4"disabled>4</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-5"disabled>5</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-6"disabled>6</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-7"disabled>7</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-8"disabled>8</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-9"disabled>9</button>
+                <button type="button" class="btn btn-lg btn-primary" id="bt-10"disabled>10</button>
+            </div>
+            <div class="timer">計時器</div>
+            <div id="timer" class="timer">00:00:00</div>
+        </div>
+        <div class="row" id="description">
+            <img src="./description.png" class="img-fluid" alt="說明">
+        </div>
+    <div class="modal fade" id="end_game" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">恭喜完成!!!</h5>
+            </div>
+            <div class="modal-body">
+                <p>好棒喔，你完成了</p>
+                <img src="./fire.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div id="end_game_time" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"><a style="color: white;" href="PTW_numgame_2.html">前往第二關</a></button>
+                <button type="button" class="btn btn-primary" onclick="reflash_web()">再玩一次</button>
+                <button type="button" class="btn btn-primary" onclick="convert_to_csv()">下載成績</button>
+            </div>
+            </div>
+    </div>
+    </div>
+        <div class="modal fade" id="start_game" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" width="50%">
+            <div class="modal-dialog modal-lg">
+        
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">遊戲說明</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="description">
+                        <img src="./description.png" class="img-fluid" alt="說明" width="50%">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="startTime()">開始遊戲</button>
+                </div>
+              </div>
+        </div>
+
+
+</body>
+<script>
+    const num_area= [
+        [ [ 26, 67 ], [ 38, 69 ] ],
+        [ [ 605, 651 ], [ 89, 130 ] ],
+        [ [ 315, 358 ], [ 45, 87 ] ],
+        [ [ 750, 786 ], [ 507, 570 ] ],
+        [ [ 582, 604 ], [ 303, 334 ] ],
+        [ [ 684, 709 ], [ 69, 97 ] ],
+        [ [ 67, 105 ], [ 165, 221 ] ],
+        [ [ 346, 392 ], [ 443, 489 ] ],
+        [ [ 52, 74 ], [ 475, 502 ] ],
+        [ [ 686, 713 ], [ 342, 388 ] ],
+        [ [ 16, 56 ], [ 372, 403 ] ]
+    ];
+
+    //data structure:num_area[num][x/y][start/end]
+
+    const num_location=[
+        [ 40, 55 ],   [ 625, 111 ],
+        [ 335, 64 ],  [ 766, 537 ],
+        [ 589, 322 ], [ 696, 87 ],
+        [ 86, 197 ],  [ 369, 465 ],
+        [ 63, 488 ],  [ 701, 357 ],
+        [ 39, 388 ]
+    ] ;
+
+    var answered=[0,0,0,0,0,0,0,0,0,0,0];
+
+    //About Time
+    let seconds = 0;
+    let timerId;
+    var hour,minute,second;
+
+
+    //To csv 
+    csv_time_array=[['發現順序','數字','計時時間'],['第一關']];
+    id=1;
+
+    //draw csv 
+    function outCircle(x,y){
+        console.log("draw circle on number")
+		var canvas = document.getElementById("cvs");
+		var ctx = canvas.getContext("2d");
+		// 設定圓形參數
+		var radius = 50;//半徑
+		var lineWidth = 2;
+		var strokeColor = "red";
+		// 繪製圓形
+		ctx.beginPath();
+		ctx.arc(x, y, radius, 0, 2*Math.PI);
+		ctx.lineWidth = lineWidth;
+		ctx.strokeStyle = strokeColor;
+		ctx.stroke();
+    }
+    function judge_position(event){
+        console.log("detect the mouse position...");
+        console.log(event.pageX,event.pageY)
+        var posX = $('#cvs').offset().left;
+        var posY = $('#cvs').offset().top;
+        console.log(event.pageX+posX,event.pageY+posY);
+        for(var i=0;i<11;i++){
+            if((event.pageX>=(num_area[i][0][0]+posX))&&(event.pageX<=(num_area[i][0][1]+posX))){
+                console.log("x is right")
+                if((event.pageY>=(num_area[i][1][0]+posY))&&(event.pageY<=(num_area[i][1][1]+posY))){
+                    console.log("y is right")
+                    RightAns(i);
+                }  
+            }
+            //judge does the mouse click on the right position.
+        }   
+    }
+
+    function reflash_web(){
+        window.location.reload();
+    }
+
+    //add addEvent listener on canva (click)
+    $("#cvs").click(function(event){
+        judge_position(event)
+    })
+
+    //audio event
+    function playAudio(num) {
+        var audio = new Audio("correct.mp3");
+        audio.addEventListener("ended",function(){
+            playNumber(num)
+        })
+        audio.play();
+        
+    }
+
+    function harry(){
+        var audio = new Audio('./sound/harry.mp3')
+        console.log('play_h')
+        audio.play();
+    }
+
+    function playNumber(num){
+        var audio = new Audio('./sound/'+num+'.mp3')
+        audio.play();
+    }
+
+
+    //judje crusor position
+    function RightAns(num){
+        console.log(num," was clicked!")
+        var x=num_location[num][0];
+        var y=num_location[num][1];
+        record_time_data(num);
+        //draw circle
+        playAudio(num);//Play Right Answer Sound
+        outCircle(num_location[num][0],num_location[num][1]);
+        $("#bt-"+num).css("background-color","gray")
+        detect_win(num);
+    }
+    function detect_win(i){
+        answered[i]=1;
+        var unanswer=0;
+        for(i in answered){
+            if(answered[i]==0){
+                unanswer+=1
+            }
+        }
+        if(unanswer==0){
+            win();
+        }
+    }
+    
+    function win(){
+        $('#end_game').modal('show');
+        stopTime();
+        $('#end_game_time').empty();
+        var end_time=minute.toString()+"分鐘"+second.toString()+"秒鐘";
+        var end_game_time_text=$('<p></p>').text("  你用了 "+end_time+" 來完成");
+        $('#end_game_time').append(end_game_time_text)
+
+        var time_text=hour.toString()+':'+minute.toString()+':'+second.toString();
+        csv_time_array.push(['總時間',time_text])
+        harry();
+    }
+
+    //Time Event 
+
+
+    function updateTime() {
+        seconds++;
+        hour = Math.floor(seconds / 3600);
+        minute = Math.floor((seconds % 3600) / 60);
+        second = seconds % 60;
+        $('#timer').text(`${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}:${second.toString().padStart(2, '0')}`);
+    }
+    function startTime(){
+        clearInterval(timerId);
+        timerId = setInterval(updateTime, 1000);
+    }
+    function stopTime(){
+        clearInterval(timerId);
+    }
+    function resetTime(){
+        clearInterval(timerId);
+        seconds = 0;
+        $('#timer').text('00:00:00');
+    }
+
+    function record_time_data(num){
+        var time_text=hour.toString()+':'+minute.toString()+':'+second.toString();
+        csv_time_array.push([id,num,time_text]);
+        id++
+    }
+
+    function convert_to_csv(){
+
+        const arrayToCSV = (arr) => {
+            return arr.map(row => row.join(',')).join('\n');
+        };
+
+        var csvString = arrayToCSV(csv_time_array);
+        csvString=  '\ufeff'+csvString; // 添加 BOM
+
+        var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'result.csv';
+
+        document.body.appendChild(a);
+        a.click();
+    }
+
+
+$(document).ready(
+    function(){
+        $('#start_game').modal('show');
+        //  image&canva event event
+        var cvs=document.getElementById("cvs");
+        const ctx=cvs.getContext('2d');
+        var img=new Image();
+        img.src="game_1.jpg";
+        img.addEventListener("load", function() {
+            ctx.drawImage(this,0,0,cvs.width,cvs.height);
+        }, false);
+
+        var posX = $('#cvs').offset().left;
+        var posY = $('#cvs').offset().top;
+        console.log("page offset:",posX,posY);
+    }
+)
+</script>
+</html>

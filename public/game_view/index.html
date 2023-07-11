@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲</title>
+    <link rel="stylesheet" type="text/css" href="../libs/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="../libs/jquery/dist/jquery.min.js"></script>
+    <script src="../libs/js/popper.min.js"></script>
+    <script src="../libs/js/bootstrap.min.js" ></script>
+</head>
+<body>
+    <div class="content">
+        <button class="previousPage">選擇遊戲</button>
+        <div class="gameWindow">
+            <div class="gameBtn levelBtn">
+                <button id="1" class="active">1</button>
+                <button id="2">2</button>
+                <button id="3">3</button>
+                <button id="4">4</button>
+                <button id="5">5</button>
+            </div>
+            <div class="myCanvas">
+                <div class="gameRule">
+                    <h1>遊戲玩法：</h1>
+                    <div class="context">
+                    </div>
+                    <h1>準備好了嗎？點擊遊戲開始！</h1>
+                </div>
+                <div class="gameIframe">
+                </div>
+            </div>
+            <div class="gameBtn optionsBtn">
+                <button id="lastBtn">上一關</button>
+                <button id="startBtn">遊戲開始</button>
+                <button id="nextBtn">下一關</button>
+                <button id="hintBtn">提示</button>
+                <button id="recordBtn">💾</button>
+                <button id="submitBtn" class="jumpBtn">送出答案</button>
+            </div>
+        </div>
+    </div>
+    <script src="./src/script.js" type="module"></script>
+</body>
+</html>

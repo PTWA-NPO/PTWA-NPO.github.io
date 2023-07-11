@@ -62,21 +62,21 @@ View [CHANGELOG.md](./CHANGELOG.md)
 6. 認識直角鈍角銳角
 7. 重量的量感與估測
 8. 時間單位換算
-9.  毫升、公升比大小
-10. 10,000 以內的數比大小
-11. 公克、公斤比大小
-12. 分數填色比大小
-13. 理解並運用適當的時間單位
-14. [分數連連看](http://ptwa-npo.github.io/game_view/?unit=math&id=11)
-15. [數字鐘 vs 時鐘](http://ptwa-npo.github.io/game_view/?unit=math&id=12)
-16. [認識 10,000 以內的數](http://ptwa-npo.github.io/game_view/?unit=math&id=13)
-17. [公分、毫米比大小](http://ptwa-npo.github.io/game_view/?unit=math&id=20)
-18. [認識平方公分](http://ptwa-npo.github.io/game_view/?unit=math&id=16)
-19. [面積估估看](http://ptwa-npo.github.io/game_view/?unit=math&id=18)
-20. [公斤和公克的換算](http://ptwa-npo.github.io/game_view/?unit=math&id=19)
-21. [認識小數](http://ptwa-npo.github.io/game_view/?unit=math&id=22)
-22. [認識公分和毫米](http://ptwa-npo.github.io/game_view/?unit=math&id=23)
-23. [公分、毫米換算](http://ptwa-npo.github.io/game_view/?unit=math&id=24)
+9. 10,000 以內的數比大小
+10. 分數填色比大小
+11. 理解並運用適當的時間單位
+12. [分數連連看](http://ptwa-npo.github.io/game_view/?unit=math&id=11)
+13. [數字鐘 vs 時鐘](http://ptwa-npo.github.io/game_view/?unit=math&id=12)
+14. [認識 10,000 以內的數](http://ptwa-npo.github.io/game_view/?unit=math&id=13)
+15. [公分、毫米比大小](http://ptwa-npo.github.io/game_view/?unit=math&id=20)
+16. [認識平方公分](http://ptwa-npo.github.io/game_view/?unit=math&id=16)
+17. [面積估估看](http://ptwa-npo.github.io/game_view/?unit=math&id=18)
+18. [公斤和公克的換算](http://ptwa-npo.github.io/game_view/?unit=math&id=19)
+19. [認識小數](http://ptwa-npo.github.io/game_view/?unit=math&id=22)
+20. [認識公分和毫米](http://ptwa-npo.github.io/game_view/?unit=math&id=23)
+21. [公分、毫米換算](http://ptwa-npo.github.io/game_view/?unit=math&id=24)
+22. [毫升、公升比大小](http://ptwa-npo.github.io/game_view/?unit=math&id=25)
+23. [公克、公斤比大小](http://ptwa-npo.github.io/game_view/?unit=math&id=26)
 
 #### [Grade 1 Technology Games](http://ptwa-npo.github.io/games/technology/grade1/index.html)：
 24. 操控滑鼠

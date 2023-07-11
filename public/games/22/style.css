@@ -1,0 +1,31 @@
+@import url(../../game_view/css/combination_lock.css);
+
+/* For Develop */
+* {
+    /* border: solid 2px black; */
+}
+
+.topArea {
+    /* justify-content: center; */
+}
+
+h2 {
+    margin-left: 10px;
+}
+.grid {
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 1em;
+}
+.grid > div {
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+}
+
+.orange-bg {
+    background-color: orange;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>認識毫公升</title>
+    <script src="../../../../libs/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="audio">
+        <audio id="correct" src="../../../../assets/sounds/game_sounds/correct_sound_effect.mp3"></audio>
+        <audio id="wrong" src="../../../../assets/sounds/game_sounds/wrong_sound_effect.mp3"></audio>
+        <audio id="win" src="../../../../assets/sounds/game_sounds/applause_fireworks.mp3" duration="3"></audio>
+    </div>
+    <div class="gameWindow">
+        <div class="gameBtn levelBtn">            
+            <button class="level">1</button>
+        </div>
+        <div class="myCanvas">
+            <div class="gameRule">
+                <h1 id="start">遊戲玩法：
+                    <span id="version">V0.2.1</span>
+                </h1>
+                <div class="context">
+                    <h1>點擊左側的題目</h1>
+                    <h1>連上右側對應的答案</h1>
+                    <h1>全對即可過關</h1>
+                </div>
+                <h1 id="end">準備好了嗎？點擊遊戲開始！</h1>
+            </div>
+            <svg class="drawingArea">
+                <line class="line" x1="0" y1="0" x2="0" y2="0" />
+            </svg>
+            <div class="topic">
+            </div>
+            <div class="lives"></div>
+            <div class="overlay">
+                <div class="hintContainer">
+                    <h1 >提示：</h1>
+                    <span class="closeHintBtn">Ｘ</span>
+                    <div class="milliliterHint"><h2>1000</h2>
+                    </div>
+                    <div class="literHint"><h2>2</h2>
+                        <div class="dividing"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="game_area">
+                <div class="left">
+                    <div class="milliliterDots">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="milliliter_container">
+                        <div class="water_container">
+                            <div class="milliliter">1000ml</div>
+                            <ul class="scales">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="water">
+                            </div>
+                        </div>
+                        <div class="water_container">
+                            <div class="milliliter">1000ml</div>
+                            <ul class="scales">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="water">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="literDots">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="water_container">
+                        <div class="liters">2L</div>
+                        <ul class="scales">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="water">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <h1 id="bingo">Ｏ</h1>
+                <h1 id="dada">Ｘ</h1>
+            </div>
+            <div id="firework-container"></div>
+        </div>
+        <div class="gameBtn optionsBtn">
+            <button id="lastBtn">上一關</button>
+            <button id="startBtn">遊戲開始</button>
+            <button id="nextBtn">下一關</button>
+            <button id="hintBtn">提示</button>
+            <button id="recordBtn">💾</button>
+        </div>
+    </div>
+    <div class="script">
+        <script src="src/script.js" type="module"></script>
+    </div>
+</body>
+</html>

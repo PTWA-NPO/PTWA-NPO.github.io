@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一年級</title>
+    <link rel="stylesheet" type="text/css" href="../../../libs/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../../libs/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-expand-sm navbar-dark sticky-top" style="background-color: #57B9D9; height: 90px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../../index.html" alt="Home">
+                    <img src="../../../assets/images/nav_bar/logo.png" class="img-fluid" style="max-width: 90%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" ></span>
+                </button>
+                <!-- <div class="collapse navbar-collapse sticky-top" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://programtheworld.tw/donate/donate" alt="捐款" target="_blank">
+                                <div class="nav1"><img src="../../../assets/images/nav_bar/donate.png" class="img-fluid"></div>
+                                <div class="nav2"><img src="../../../assets/images/nav_bar/donate_hover.png" class="img-fluid"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" alt="遊戲">
+                                <img src="../../../assets/images/nav_bar/sharing.png" class="img-fluid">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://programtheworld.tw/works/index" alt="耕耘" target="_blank">
+                                <img src="../../../assets/images/nav_bar/effort.png" class="img-fluid">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://programtheworld.tw/about/about?pagetarget=us" alt="關於" target="_blank">
+                                <img src="../../../assets/images/nav_bar/about2.png" class="img-fluid">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.facebook.com/program.the.world" alt="facebook" target="_blank">
+                                <img src="../../../assets/images/nav_bar/facebook.png" class="img-fluid">
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
+                <!-- 數學單元 -->
+                <div class="mathUnit">單元：
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <button class="previousPage">選擇遊戲</button>
+        <div class="gameBlock">
+            <div class="game" id="1">
+                <div class="img"></div>
+                <h3>數一數</h3>
+            </div>
+            <div class="game" id="2">
+                <div class="img"></div>
+                <h3>手勢、數字 1~10 連連看</h3>
+            </div>
+            <div class="game" id="3">
+                <div class="img"></div>
+                <h3>數字 0~10 找找在哪裡？</h3>
+            </div>
+            
+        </div>
+    
+        <div class="iframe">
+            <iframe id="frame1" scrolling="no" src="./math/index.html"></iframe>
+            <iframe id="frame2" scrolling="no" src="./digital_connection/index.html"></iframe>
+            <iframe id="frame3" scrolling="no" src="./PTWA_num_game/PTW_numgame_1.html"></iframe>
+        </div>
+    </div>
+    <script src="../../../libs/js/popper.min.js"></script>
+    <script src="../../../libs/js/bootstrap.min.js" ></script>
+    <script src="script.js"></script>
+</body>
+</html>
