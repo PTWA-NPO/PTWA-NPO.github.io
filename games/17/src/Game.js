@@ -15,19 +15,22 @@ export class Game extends CombinationLockTemplate {
         super(gameData);
         // Initialise game object
         this.topicExplain = Array(this.levelLimit).fill("每格一平方公分，這些圖形面積是幾平方公分呢？");
+        this.topic = $('.topic').children().eq(this.level - 1);
     }
 
     startGame(level) {
         if (!super.startGame(level)) return false;
         // create game content
         this.answerData = this.gameData[level-1].answer;
+        this.topic = $('.topic').children().eq(level - 1);
         this.generatorTopicArea();
     }
 
     generatorTopicArea() {
         //future
-        $('.topic').hide();
-        $('.topic').eq(this.level - 1).show();
+        $('.topic').children().hide();
+        
+        this.topic.show();
     }
 
     correctAnswer(){
