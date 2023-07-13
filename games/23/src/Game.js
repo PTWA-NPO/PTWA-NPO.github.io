@@ -64,7 +64,7 @@ export class Game extends CombinationLockTemplate {
 export default Game;
 
 // Read game_config.json file
-const gameData = await gameModules.getJson('../../games/23/game_config.json');
+const gameData = await gameModules.getJson('/public/games/23/game_config.json');
 // Create game Instance, Must input gameData
 const gameInstance = new Game(gameData);
 // Post game to game_view

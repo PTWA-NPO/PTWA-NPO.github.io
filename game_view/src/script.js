@@ -3,7 +3,7 @@ import { gameModules } from './module.js';
 import { Handler } from './Handler.js';
 
 async function init() {
-    const allGameData = await gameModules.getJson('../../../../public/game_view/game_config.json');
+    const allGameData = await gameModules.getJson('/public/game_view/game_config.json');
     const gameID = getGameID();
     const gameData = allGameData[gameID];
     const gameGrade = gameData.game_grade;
