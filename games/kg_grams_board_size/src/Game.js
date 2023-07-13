@@ -20,7 +20,7 @@ export class Game extends SizeComparison {
 export default Game;
 
 // Read game_config.json file
-const gameData = await gameModules.getJson('/public/games/kg_grams_board_size/game_config.json');
+const gameData = await gameModules.getJson('../kg_grams_board_size/game_config.json');
 // Create game Instance, Must input gameData
 const gameInstance = new Game(gameData);
 // Post game to game_view

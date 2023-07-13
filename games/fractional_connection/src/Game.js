@@ -66,7 +66,7 @@ export class Game extends ConnectionGame {
 
 export default Game;
 
-const gameData = await gameModules.getJson('/public/games/fractional_connection/game_config.json');
+const gameData = await gameModules.getJson('../fractional_connection/game_config.json');
 const gameInstance = new Game(gameData);
 window.getGame = function() {
     return gameInstance;

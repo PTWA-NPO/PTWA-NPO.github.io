@@ -25,7 +25,7 @@ export class Game extends SizeComparison {
 export default Game;
 
 // Read game_config.json file
-const gameData = await gameModules.getJson('/public/games/centimeter_millimeter_ratio_size/game_config.json');
+const gameData = await gameModules.getJson('../centimeter_millimeter_ratio_size/game_config.json');
 // Create game Instance, Must input gameData
 const gameInstance = new Game(gameData);
 // Post game to game_view

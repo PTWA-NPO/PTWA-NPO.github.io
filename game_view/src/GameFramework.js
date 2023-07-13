@@ -160,7 +160,7 @@ export class GameFramework {
     }      
     
     showFirework = () => {
-        const fireworksUrl = '../../../../public/assets/images/game_images/fireworks.gif';
+        const fireworksUrl = '../../assets/images/game_images/fireworks.gif';
         const fireworksArea = {
             "width": this.fireworkContainer.width(),
             "height": this.fireworkContainer.height()
@@ -191,9 +191,9 @@ class ElementGenerator {
     generateAudio() {
         const audioHTML = `
             <div class="audio">
-                <audio id="correct" src="../../../../public/assets/sounds/game_sounds/correct_sound_effect.mp3"></audio>
-                <audio id="wrong" src="../../../../public/assets/sounds/game_sounds/wrong_sound_effect.mp3"></audio>
-                <audio id="win" src="../../../../public/assets/sounds/game_sounds/applause_fireworks.mp3" duration="3"></audio>
+                <audio id="correct" src="../../assets/sounds/game_sounds/correct_sound_effect.mp3"></audio>
+                <audio id="wrong" src="../../assets/sounds/game_sounds/wrong_sound_effect.mp3"></audio>
+                <audio id="win" src="../../assets/sounds/game_sounds/applause_fireworks.mp3" duration="3"></audio>
             </div>
         `;
         $('body').append(audioHTML);
@@ -250,42 +250,11 @@ class ElementGenerator {
 
     createLifeElement() {
         return $('<img>')
-            .attr('src', '../../../../public/assets/images/game_images/lives.svg')
+            .attr('src', '../../assets/images/game_images/lives.svg')
             .attr('alt', 'lives image')
             .attr('width', '60')
             .attr('height', 'auto')
             .css('margin-right', '-30px');
-    }
-
-    // TODO how to use
-    generateDot(...args) {
-        let targetElement;
-        const dotDiv = $('<div>').addClass('dot');
-      
-        if (typeof args[0] === 'object') {
-            const argObject = args[0];
-            Object.entries(argObject).forEach(([className, parent]) => {
-                const elements = $(className);
-                elements.each(function() {
-                    const clonedElement = $(this).clone();
-                    const parentElement = $(parent);
-                    parentElement.append(clonedElement);
-                    dotDiv.append(clonedElement);
-                });
-                targetElement = parent;
-            });
-        } else {
-            const classNames = args;
-            classNames.forEach(className => {
-                    const elements = $(className);
-                    elements.each(function() {
-                    dotDiv.append($(this).clone());
-                });
-                targetElement = classNames.length === 1 ? '.gameArea' : className;
-            });
-        }
-      
-        $(targetElement).append(dotDiv);
     }
   }
 

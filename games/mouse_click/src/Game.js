@@ -186,7 +186,7 @@ export class Game extends GameFramework {
 export default Game;
 
 // Read game_config.json file
-const gameData = await gameModules.getJson('/public/games/mouse_click/game_config.json');
+const gameData = await gameModules.getJson('../mouse_click/game_config.json');
 // Create game Instance, Must input gameData
 const gameInstance = new Game(gameData);
 // Post game to game_view
