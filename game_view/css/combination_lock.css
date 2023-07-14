@@ -104,13 +104,13 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     border-color: white;
 }
 .cursor {
-    display: none;
     position: absolute;
-    pointer-events: none; /* Let clicks pass through */
-    z-index: 1000; /* Ensure the cursor appears on top of other elements */
+    pointer-events: none;
+    z-index: 1000;
 }
 
 .cursor-eraser {
+    display: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
