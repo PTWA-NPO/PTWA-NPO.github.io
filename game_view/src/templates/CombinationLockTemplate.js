@@ -210,6 +210,7 @@ class DrawingGenerator {
 
     setupHTML() {
         const drawingTool = `
+            <div class="cursor cursor-pencil"></div>
             <div class="cursor cursor-eraser"></div>
             <div class="drawingTool">
                 <button id="pencil" class="icon clicked-bg">畫筆</button>
@@ -272,9 +273,11 @@ class DrawingGenerator {
     
         $('.drawingTool').click((e) => {
             if (e.target.id === 'pencil') {
+                $('.cursor-pencil').show();
                 this.switchTool("source-over", 5, 'eraser', false);
             }
             else if (e.target.id === 'eraser') {
+                $('.cursor-pencil').hide();
                 this.switchTool("destination-out", 20, 'pencil', true);
             }
             else return
