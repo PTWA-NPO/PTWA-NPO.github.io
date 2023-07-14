@@ -108,7 +108,13 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     pointer-events: none;
     z-index: 1000;
 }
-
+.cursor-pencil {
+    width: 40px;
+    height: 60px;
+    background: url('../../assets/images/game_images/combiantion_lock/pencil.png') no-repeat;
+    background-size: 40px 60px;
+    transform: translate(10px, -80%);
+}
 .cursor-eraser {
     display: none;
     width: 20px;
