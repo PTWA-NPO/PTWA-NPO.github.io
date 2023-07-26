@@ -23,6 +23,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ${{ secrets.TARGET_DIR }}
-            sudo git pull origin/aws_stage
+            sudo git pull origin aws_stage
             sudo git reset --hard origin/aws_stage
             sudo pm2 restart ptwa_npo_prod_run
