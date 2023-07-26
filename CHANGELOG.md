@@ -2,6 +2,11 @@
 
 The format is modified from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023.07.26
+##### [3.30.1] - Educational Games
+**Changed**
+- 修改 mouse game 不知何時改成舊版，並把新版的 mouse replace old mouse
+
 ### 2023.07.13
 ##### [3.30.0] - Educational Games
 **Added**
