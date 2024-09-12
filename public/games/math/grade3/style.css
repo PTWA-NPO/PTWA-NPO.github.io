@@ -62,9 +62,7 @@
     color: aliceblue;
     background-color:#7b8e5d;
 }
-.content * {
-    /* border: solid 2px black; */
-}
+
 .content {
     display: flex;
     justify-content: center;
